@@ -26,8 +26,8 @@ namespace assignment2
 			int num = 1;
 			for (int i = 1; i <= numOfInput; i++)
 			{
-				Console.WriteLine("Please  give  the value number no "+ i + " (whole number): ");
-				num = int.Parse(Console.ReadLine());
+				Console.Write("Please  give  the value number no "+ i + " (whole number): ");
+				num = Input.ReadIntegerConsole();
 				sum += num;
 			}
 		}
@@ -35,7 +35,7 @@ namespace assignment2
 		private void ReadInput()
 		{
 			Console.Write("Number of whole numbers to sum? ");
-			numOfInput = int.Parse(Console.ReadLine());
+			numOfInput = Input.ReadIntegerConsole();
 			Console.WriteLine();
 		}
 

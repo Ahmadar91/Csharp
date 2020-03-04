@@ -40,9 +40,10 @@ namespace assignment2
 
 		private double ReadInput()
 		{
-			Console.WriteLine("Write an amount to sum or zero to finish: ");
-			
-			double num = double.Parse(Console.ReadLine());
+
+			Console.Write("Write an amount to sum or zero to finish: ");
+
+			double num = Input.ReadDoubleConsole();
 			return num;
 		}
 

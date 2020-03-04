@@ -11,7 +11,7 @@ namespace assignment2
 			while (choice != 0)
 			{
 				writeMenuText();
-				choice = int.Parse(Console.ReadLine());
+				choice = Input.ReadIntegerConsole();
 				switch (choice)
 				{
 					case 1:
@@ -29,17 +29,24 @@ namespace assignment2
 					}
 					case 3:
 					{
-						Console.WriteLine("Whole Number With for");
+						CurrencyConverter obj = new CurrencyConverter();
+						obj.Start();
 						break;
 					}
 					case 4:
 					{
-						Console.WriteLine("Whole Number With for");
+						TemperatureTable temp = new TemperatureTable();
+						temp.Start();
 						break;
 					}
 					case 5:
 					{
-						Console.WriteLine("Whole Number With for");
+						Console.WriteLine("work");
+						break;
+					}
+					default:
+					{
+						Console.WriteLine("Invalid input Choose a number from the menu");
 						break;
 					}
 				}
@@ -48,17 +55,18 @@ namespace assignment2
 
 		private void writeMenuText()
 		{
-			Console.WriteLine("-----------------------------");
+			Console.WriteLine("---------------------------------");
 			Console.WriteLine("MAIN MENU");
-			Console.WriteLine("-----------------------------");
+			Console.WriteLine("---------------------------------");
 
 			Console.WriteLine("Whole Number With for:                  1");
 			Console.WriteLine("Whole Number With while:                2");
 			Console.WriteLine("Currency Converter with Do While Loop:  3");
-			Console.WriteLine("Work Schedule:                          4");
-			Console.WriteLine("Temperature Table                       5");
+			Console.WriteLine("Temperature Table                       4");
+			Console.WriteLine("Work Schedule:                          5");
 			Console.WriteLine("Exit The Program                        0");
-			Console.WriteLine("Your choice:");
+			Console.WriteLine("---------------------------------");
+			Console.Write("Your choice:");
 		}
 	}
 }
