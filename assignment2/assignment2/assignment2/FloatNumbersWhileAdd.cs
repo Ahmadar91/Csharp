@@ -26,15 +26,14 @@ namespace assignment2
 			bool done = false;
 			while (!done)
 			{
-				if (Math.Round(ReadInput(), 7) != 0)
+				double num = ReadInput();
+				if (Math.Round(num, 7) == 0.0)
 				{
-					sum += ReadInput();
-
-					
+					done = true;
 				}
 				else
 				{
-					done = true;
+					sum += num;
 				}
 			
 			}
@@ -45,6 +44,7 @@ namespace assignment2
 		private double ReadInput()
 		{
 			Console.WriteLine("Write an amount to sum or zero to finish: ");
+			
 			double num = double.Parse(Console.ReadLine());
 			return num;
 		}
