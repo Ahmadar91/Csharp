@@ -1,0 +1,1 @@
+The Assignment1.sln is in the PetApplication and it contains both projects(PetApplication and gameApplication) by selecting it in VS
