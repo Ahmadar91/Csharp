@@ -35,10 +35,7 @@ namespace assignment2
 				{
 					sum += num;
 				}
-			
 			}
-
-
 		}
 
 		private double ReadInput()
