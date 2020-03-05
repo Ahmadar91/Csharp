@@ -12,19 +12,31 @@ namespace assignment2
 
 		private void ReadInput()
 		{
-			int choice = Input.ReadIntegerConsole();
-			switch (choice)
+			int choice = -1;
+			bool done = false;
+			while (choice != 0)
 			{
-				case 1:
+				choice = Input.ReadIntegerConsole();
+
+				switch (choice)
 					{
-						ShowCelsiusToFahrenheit();
-						break;
+						case 1:
+						{
+							ShowCelsiusToFahrenheit();
+							break;
+						}
+						case 2:
+						{
+							ShowFahrenheitToCelsius();
+							break;
+						}
+						// default:
+						// {
+						// 	Console.Write("Invalid input Choose a number from the menu: ");
+						// 	break;
+						// }
 					}
-				case 2:
-					{
-						ShowFahrenheitToCelsius();
-						break;
-					}
+				
 			}
 		}
 
@@ -34,6 +46,7 @@ namespace assignment2
 			Console.WriteLine();
 			Console.WriteLine("From Celsius to Fahrenheit:          1");
 			Console.WriteLine("From Fahrenheit to Celsius:          2");
+			Console.WriteLine("return to MainMenu:          0");
 			Console.Write("your Choice: ");
 		}
 
@@ -53,6 +66,8 @@ namespace assignment2
 
 				index += 2;
 			}
+
+			WriteProgramInfo();
 		}
 
 		private void ShowCelsiusToFahrenheit()
@@ -69,6 +84,8 @@ namespace assignment2
 				Console.WriteLine(str + "          =                 " + str2);
 				index += 2;
 			}
+
+			WriteProgramInfo();
 		}
 	}
 }

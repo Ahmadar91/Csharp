@@ -41,7 +41,8 @@ namespace assignment2
 					}
 					case 5:
 					{
-						Console.WriteLine("work");
+						WorkingSchedule obj = new WorkingSchedule();
+							obj.start();
 						break;
 					}
 					default:

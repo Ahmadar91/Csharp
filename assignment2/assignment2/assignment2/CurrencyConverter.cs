@@ -5,7 +5,8 @@ namespace assignment2
 	public class CurrencyConverter
 	{
 		private decimal _sum;
-
+		private string _currency;
+		private decimal _total;
 		public void Start()
 		{
 			WriteProgramInfo();
@@ -13,20 +14,14 @@ namespace assignment2
 			ExchangeRate();
 			ShowResults();
 		}
-
+	
 		private void ExchangeRate()
 		{
 			Console.Write("Name of the foreign currency: ");
-			string str = Console.ReadLine();
-			switch (str)
-			{
-				case "USA":
-					{
-						Console.WriteLine("Exchange rate: 9.14");
-						_sum = _sum * (decimal)9.14;
-						break;
-					}
-			}
+			_currency = Console.ReadLine();
+			Console.WriteLine("Exchange rate: ");
+			decimal rate = Input.ReadDecimalConsole();
+			_total = _sum * rate;
 
 		}
 
@@ -40,10 +35,10 @@ namespace assignment2
 		private void ReadInputAndSumNumbers()
 		{
 			bool done = false;
-			while (!done)
+			do
 			{
 				decimal num = ReadInput();
-				if (Math.Round(num, 7) == (decimal)0.0)
+				if (Math.Round(num, 7) == (decimal) 0.0)
 				{
 					done = true;
 				}
@@ -51,7 +46,7 @@ namespace assignment2
 				{
 					_sum += num;
 				}
-			}
+			} while (!done);
 		}
 
 		private decimal ReadInput()
@@ -66,7 +61,7 @@ namespace assignment2
 		private void ShowResults()
 		{
 			Console.WriteLine("------------------\n");
-			Console.WriteLine("the sum is: " + _sum + "Kr");
+			Console.WriteLine("the sum is of  " +  " " + _sum + _currency + " is " + _total + "Kr");
 		}
 	}
 }
