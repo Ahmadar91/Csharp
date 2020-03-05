@@ -16,15 +16,15 @@ namespace assignment2
 			switch (choice)
 			{
 				case 1:
-				{
-					ShowCelsiusToFahrenheit();
-					break;
-				}
+					{
+						ShowCelsiusToFahrenheit();
+						break;
+					}
 				case 2:
-				{
-					ShowFahrenheitToCelsius();
-					break;
-				}
+					{
+						ShowFahrenheitToCelsius();
+						break;
+					}
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace assignment2
 				string str = string.Format("{0}°C", Math.Round(toCelsius));
 				string str2 = string.Format("{0}°F", Math.Round(index));
 				Console.WriteLine(str2 + "          =                 " + str);
-			
+
 				index += 2;
 			}
 		}

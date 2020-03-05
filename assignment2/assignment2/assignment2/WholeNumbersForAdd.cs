@@ -4,8 +4,8 @@ namespace assignment2
 {
 	public class WholeNumbersForAdd
 	{
-		private int numOfInput;
-		private int sum;
+		private int _numOfInput;
+		private int _sum;
 		public void Start()
 		{
 			WriteProgramInfo();
@@ -17,25 +17,23 @@ namespace assignment2
 		private void ShowResults()
 		{
 			Console.WriteLine("------------------\n");
-			Console.WriteLine("the sum is \t{0}", sum);
+			Console.WriteLine("the sum is \t{0}", _sum);
 		}
 
 		private void SumNumbers()
 		{
-		
-			int num = 1;
-			for (int i = 1; i <= numOfInput; i++)
+			for (int i = 1; i <= _numOfInput; i++)
 			{
-				Console.Write("Please  give  the value number no "+ i + " (whole number): ");
-				num = Input.ReadIntegerConsole();
-				sum += num;
+				Console.Write("Please  give  the value number no " + i + " (whole number): ");
+				int num = Input.ReadIntegerConsole();
+				_sum += num;
 			}
 		}
 
 		private void ReadInput()
 		{
 			Console.Write("Number of whole numbers to sum? ");
-			numOfInput = Input.ReadIntegerConsole();
+			_numOfInput = Input.ReadIntegerConsole();
 			Console.WriteLine();
 		}
 

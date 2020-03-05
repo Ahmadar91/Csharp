@@ -5,7 +5,7 @@ namespace assignment2
 
 	public class FloatNumbersWhileAdd
 	{
-		private double sum;
+		private double _sum;
 
 		public void Start()
 		{
@@ -28,13 +28,11 @@ namespace assignment2
 			{
 				double num = ReadInput();
 				if (Math.Round(num, 7) == 0.0)
-				{
 					done = true;
-				}
 				else
-				{
-					sum += num;
-				}
+
+					_sum += num;
+
 			}
 		}
 
@@ -50,7 +48,7 @@ namespace assignment2
 		private void ShowResults()
 		{
 			Console.WriteLine("------------------\n");
-			Console.WriteLine("the sum is \t{0}", sum);
+			Console.WriteLine("the sum is \t{0}", _sum);
 		}
 	}
 }
