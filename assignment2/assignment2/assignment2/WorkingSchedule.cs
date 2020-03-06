@@ -5,7 +5,7 @@ namespace assignment2
 {
 	public class WorkingSchedule
 	{
-		public void start()
+		public void Start()
 		{
 			WriteProgramInfo();
 			ReadInput();
@@ -15,9 +15,9 @@ namespace assignment2
 		{
 			Console.WriteLine("+++++++++++ Working Secluded +++++++++++++++++");
 			Console.WriteLine();
-			Console.WriteLine($"{"Show a list of the weekends to work:  ",-38} {": 1",10:C}");
-			Console.WriteLine($"{"Show a list of the nights to work:    ",-38} {": 2",10:C}");
-			Console.WriteLine($"{"Return to main menu:      ",-38} {": 0",10:C}");
+			Console.WriteLine($"{"Show a list of the weekends to work:  ",-38} {": 1",10}");
+			Console.WriteLine($"{"Show a list of the nights to work:    ",-38} {": 2",10}");
+			Console.WriteLine($"{"Return to main menu:      ",-38} {": 0",10}");
 			Console.Write("Your Choice: ");
 		}
 
@@ -41,6 +41,11 @@ namespace assignment2
 						case 2:
 						{
 							ShowNights();
+							break;
+						}
+						// case 0 was left empty to overcome the default since pressing 0 to close the menu will trigger the default case
+						case 0:
+						{
 							break;
 						}
 						default:

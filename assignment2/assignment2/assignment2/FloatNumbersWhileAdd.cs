@@ -27,7 +27,7 @@ namespace assignment2
 			while (!done)
 			{
 				double num = ReadInput();
-				if (Math.Round(num, 7) == 0.0)
+				if (Math.Round(num, 1) == 0.0)
 					done = true;
 				else
 

@@ -41,7 +41,7 @@ namespace assignment2
 					case 5:
 					{
 						WorkingSchedule obj = new WorkingSchedule();
-							obj.start();
+							obj.Start();
 						break;
 					}
 					default:
@@ -59,12 +59,12 @@ namespace assignment2
 			Console.WriteLine("---------------------------------");
 			Console.WriteLine("MAIN MENU");
 			Console.WriteLine("---------------------------------");
-			Console.WriteLine($"{"Whole Number With For",-38} {": 1",10:C}");
-			Console.WriteLine($"{"Whole Number With while",-38} {": 2",10:C}");
-			Console.WriteLine($"{"Currency Converter with Do While Loop ",-18} {": 3",10:C}");
-			Console.WriteLine($"{"Temperature Table",-38} {": 4",10:C}");
-			Console.WriteLine($"{"Work Schedule",-38} {": 5",10:C}");
-			Console.WriteLine($"{"Exit The Program",-38} {": 0",10:C}");
+			Console.WriteLine($"{"Whole Number With For",-38} {": 1",10}");
+			Console.WriteLine($"{"Whole Number With while",-38} {": 2",10}");
+			Console.WriteLine($"{"Currency Converter with Do While Loop ",-18} {": 3",10}");
+			Console.WriteLine($"{"Temperature Table",-38} {": 4",10}");
+			Console.WriteLine($"{"Work Schedule",-38} {": 5",10}");
+			Console.WriteLine($"{"Exit The Program",-38} {": 0",10}");
 			Console.WriteLine("---------------------------------");
 			Console.Write("Your choice:");
 		}
