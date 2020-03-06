@@ -16,7 +16,6 @@ namespace assignment2
 				{
 					case 1:
 					{
-						Console.WriteLine("Whole Number With for");
 						WholeNumbersForAdd sumobj = new WholeNumbersForAdd();
 						sumobj.Start();
 						break;
@@ -56,16 +55,16 @@ namespace assignment2
 
 		private void writeMenuText()
 		{
+			
 			Console.WriteLine("---------------------------------");
 			Console.WriteLine("MAIN MENU");
 			Console.WriteLine("---------------------------------");
-
-			Console.WriteLine("Whole Number With for:                  1");
-			Console.WriteLine("Whole Number With while:                2");
-			Console.WriteLine("Currency Converter with Do While Loop:  3");
-			Console.WriteLine("Temperature Table                       4");
-			Console.WriteLine("Work Schedule:                          5");
-			Console.WriteLine("Exit The Program                        0");
+			Console.WriteLine($"{"Whole Number With For",-38} {": 1",10:C}");
+			Console.WriteLine($"{"Whole Number With while",-38} {": 2",10:C}");
+			Console.WriteLine($"{"Currency Converter with Do While Loop ",-18} {": 3",10:C}");
+			Console.WriteLine($"{"Temperature Table",-38} {": 4",10:C}");
+			Console.WriteLine($"{"Work Schedule",-38} {": 5",10:C}");
+			Console.WriteLine($"{"Exit The Program",-38} {": 0",10:C}");
 			Console.WriteLine("---------------------------------");
 			Console.Write("Your choice:");
 		}

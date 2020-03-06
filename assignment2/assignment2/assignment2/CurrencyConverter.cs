@@ -52,7 +52,7 @@ namespace assignment2
 		private decimal ReadInput()
 		{
 
-			Console.Write("Write an amount to add to total: ");
+			Console.Write("Write an amount to sum or zero to finish: ");
 
 			decimal num = Input.ReadDecimalConsole();
 			return num;
@@ -61,7 +61,7 @@ namespace assignment2
 		private void ShowResults()
 		{
 			Console.WriteLine("------------------\n");
-			Console.WriteLine("the sum is of  " +  " " + _sum + _currency + " is " + _total + "Kr");
+			Console.WriteLine("the sum is of  " +  " " + _sum +" "+ _currency + " is " + _total + " Kr");
 		}
 	}
 }
