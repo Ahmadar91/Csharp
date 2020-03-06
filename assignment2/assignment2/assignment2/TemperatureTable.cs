@@ -6,7 +6,7 @@ namespace assignment2
 	{
 		public void Start()
 		{
-		
+			WriteProgramInfo();
 			ReadInput();
 		}
 

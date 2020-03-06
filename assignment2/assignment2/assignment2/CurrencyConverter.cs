@@ -62,7 +62,7 @@ namespace assignment2
 		private void ShowResults()
 		{
 			Console.WriteLine("------------------\n");
-			Console.WriteLine("the sum is of  " +  " " + _sum +" "+ " Kr" + " is " + _total +" "+ _currency +" at the rate of " + _rate);
+			Console.WriteLine("the sum is of  " + _sum + " Kr" + " is " + _total +" "+ _currency +" at the rate of " + _rate + " Kr/"+ _currency);
 		}
 	}
 }
