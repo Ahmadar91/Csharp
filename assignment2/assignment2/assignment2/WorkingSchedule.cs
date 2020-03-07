@@ -24,7 +24,6 @@ namespace assignment2
 
 		private void ReadInput()
 		{
-
 			int choice = -1;
 			while (choice != 0)
 			{
@@ -34,63 +33,55 @@ namespace assignment2
 					switch (choice)
 					{
 						case 1:
-						{
-							ShowWeekEnds();
-							break;
-						}
+							{
+								int i = 1;
+								int interval = 3;
+								Results(i, interval, choice);
+								break;
+							}
 						case 2:
-						{
-							ShowNights();
-							break;
-						}
+							{
+								int i = 6;
+								int interval = 5;
+								Results(i, interval, choice);
+								break;
+							}
 						// case 0 was left empty to overcome the default since pressing 0 to close the menu will trigger the default case
 						case 0:
-						{
-							break;
-						}
+							{
+								break;
+							}
 						default:
-						{
-							Console.WriteLine("Invalid input Choose a number from the menu");
-							break;
-						}
+							{
+								Console.WriteLine("Invalid input Choose a number from the menu");
+								break;
+							}
 					}
 				}
 			}
 		}
 
-		private void ShowWeekEnds()
+
+
+		private void Results(int k, int interval, int choice)
 		{
 			StringBuilder str = new StringBuilder();
-
-			for (int i = 1; i <= 52; i+=3)
+			for (int i = k; i <= 52; i += interval)
 			{
-				
 				str.Append($"{"  week " + i,-9}");
-				if (i == 16 || i == 34)
+				if (i == 31 && choice == 2)
 				{
 					str.Append("\n");
 				}
-			}
-			
-
-
-			Console.WriteLine(str);
-			Console.WriteLine("---------------------------------");
-			WriteProgramInfo();
-		}
-
-		private void ShowNights()
-		{
-			StringBuilder str = new StringBuilder();
-			for (int i = 6; i <= 52; i += 5)
-			{
-
-				str.Append($"{"  week " + i,-9}");
-				if (i == 31)
+				else
 				{
-					str.Append("\n");
+					if ((i == 16 || i == 34) && choice == 1)
+					{
+						str.Append("\n");
+					}
 				}
 			}
+
 			Console.WriteLine(str);
 			Console.WriteLine("---------------------------------");
 			WriteProgramInfo();
