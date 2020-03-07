@@ -34,16 +34,16 @@ namespace assignment2
 				{
 					case 1:
 						{
-							int i = 1;
+							int week = 1;
 							int interval = 3;
-							Results(i, interval, choice);
+							Results(week, interval, choice);
 							break;
 						}
 					case 2:
 						{
-							int i = 6;
+							int week = 6;
 							int interval = 5;
-							Results(i, interval, choice);
+							Results(week, interval, choice);
 							break;
 						}
 					// case 0 was left empty to overcome the default since pressing 0 to close the menu will trigger the default case
@@ -60,11 +60,12 @@ namespace assignment2
 			}
 		}
 
-
-		private void Results(int k, int interval, int choice)
+		// For this class i chose a for loop since the week number is given and the interval is also give.
+		// so the for loop would be the best choice since i can have full control over the variables in the loop
+		private void Results(int week, int interval, int choice)
 		{
 			StringBuilder str = new StringBuilder();
-			for (int i = k; i <= 52; i += interval)
+			for (int i = week; i <= 52; i += interval)
 			{
 				str.Append($"{"  week " + i,-9}");
 				if (i == 31 && choice == 2)
