@@ -29,38 +29,36 @@ namespace assignment2
 			{
 				choice = Input.ReadIntegerConsole();
 
+
+				switch (choice)
 				{
-					switch (choice)
-					{
-						case 1:
-							{
-								int i = 1;
-								int interval = 3;
-								Results(i, interval, choice);
-								break;
-							}
-						case 2:
-							{
-								int i = 6;
-								int interval = 5;
-								Results(i, interval, choice);
-								break;
-							}
-						// case 0 was left empty to overcome the default since pressing 0 to close the menu will trigger the default case
-						case 0:
-							{
-								break;
-							}
-						default:
-							{
-								Console.WriteLine("Invalid input Choose a number from the menu");
-								break;
-							}
-					}
+					case 1:
+						{
+							int i = 1;
+							int interval = 3;
+							Results(i, interval, choice);
+							break;
+						}
+					case 2:
+						{
+							int i = 6;
+							int interval = 5;
+							Results(i, interval, choice);
+							break;
+						}
+					// case 0 was left empty to overcome the default since pressing 0 to close the menu will trigger the default case
+					case 0:
+						{
+							break;
+						}
+					default:
+						{
+							Console.WriteLine("Invalid input Choose a number from the menu");
+							break;
+						}
 				}
 			}
 		}
-
 
 
 		private void Results(int k, int interval, int choice)
