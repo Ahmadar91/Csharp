@@ -52,6 +52,7 @@ namespace assignment2
 			Console.Write("your Choice: ");
 		}
 
+		// the reason i chose a for loop here is that we have to show the temperature from 0 to 100 with an interval of 2
 
 		private void ShowFahrenheitToCelsius()
 		{
@@ -72,7 +73,7 @@ namespace assignment2
 
 			WriteProgramInfo();
 		}
-
+		// the reason i chose a for loop here is that we have to show the temperature from 0 to 100 with an interval of 2
 		private void ShowCelsiusToFahrenheit()
 		{
 			Console.WriteLine("------------------------------");
