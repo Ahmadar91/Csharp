@@ -6,6 +6,7 @@ namespace assignment2
 	{
 		private int _numOfInput;
 		private int _sum;
+
 		public void Start()
 		{
 			WriteProgramInfo();
@@ -39,7 +40,6 @@ namespace assignment2
 
 		private void WriteProgramInfo()
 		{
-
 			Console.WriteLine("\n\n +++++++++Summation of whole numbers+++++++++");
 			Console.WriteLine("              Using a for-statement\n");
 			Console.WriteLine();

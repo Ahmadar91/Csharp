@@ -4,7 +4,6 @@ namespace assignment2
 {
 	public class Input
 	{
-
 		public static int ReadIntegerConsole()
 		{
 			int input;
@@ -15,7 +14,6 @@ namespace assignment2
 				Console.WriteLine("Wrong Input. Please try again:");
 				return ReadIntegerConsole();
 			}
-
 		}
 
 
@@ -29,9 +27,7 @@ namespace assignment2
 				Console.WriteLine("Wrong Input. Please try again:");
 				return ReadDoubleConsole();
 			}
-
 		}
-
 
 
 		public static decimal ReadDecimalConsole()
@@ -44,7 +40,6 @@ namespace assignment2
 				Console.WriteLine("Wrong Input. Please try again:");
 				return ReadDecimalConsole();
 			}
-
 		}
 	}
 }

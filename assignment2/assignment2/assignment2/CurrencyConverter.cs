@@ -8,6 +8,7 @@ namespace assignment2
 		private string _currency;
 		private decimal _total;
 		private decimal _rate;
+
 		public void Start()
 		{
 			WriteProgramInfo();
@@ -15,15 +16,14 @@ namespace assignment2
 			ExchangeRate();
 			ShowResults();
 		}
-	
+
 		private void ExchangeRate()
 		{
 			Console.Write("Name of the foreign currency: ");
 			_currency = Console.ReadLine();
 			Console.WriteLine("Exchange rate: ");
-			 _rate= Input.ReadDecimalConsole();
+			_rate = Input.ReadDecimalConsole();
 			_total = _sum / _rate;
-
 		}
 
 		private void WriteProgramInfo()
@@ -52,7 +52,6 @@ namespace assignment2
 
 		private decimal ReadInput()
 		{
-
 			Console.Write("Write an amount to sum or zero to finish: ");
 
 			decimal num = Input.ReadDecimalConsole();
@@ -62,7 +61,8 @@ namespace assignment2
 		private void ShowResults()
 		{
 			Console.WriteLine("------------------\n");
-			Console.WriteLine("the sum is of  " + _sum + " Kr" + " is " + _total +" "+ _currency +" at the rate of " + _rate + " Kr/"+ _currency);
+			Console.WriteLine("the sum is of  " + _sum + " Kr" + " is " + _total + " " + _currency +
+			                  " at the rate of " + _rate + " Kr/" + _currency);
 		}
 	}
 }

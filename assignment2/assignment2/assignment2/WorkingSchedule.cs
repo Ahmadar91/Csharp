@@ -33,29 +33,29 @@ namespace assignment2
 				switch (choice)
 				{
 					case 1:
-						{
-							int week = 1;
-							int interval = 3;
-							Results(week, interval, choice);
-							break;
-						}
+					{
+						int week = 1;
+						int interval = 3;
+						Results(week, interval, choice);
+						break;
+					}
 					case 2:
-						{
-							int week = 6;
-							int interval = 5;
-							Results(week, interval, choice);
-							break;
-						}
+					{
+						int week = 6;
+						int interval = 5;
+						Results(week, interval, choice);
+						break;
+					}
 					// case 0 was left empty to overcome the default since pressing 0 to close the menu will trigger the default case
 					case 0:
-						{
-							break;
-						}
+					{
+						break;
+					}
 					default:
-						{
-							Console.WriteLine("Invalid input Choose a number from the menu");
-							break;
-						}
+					{
+						Console.WriteLine("Invalid input Choose a number from the menu");
+						break;
+					}
 				}
 			}
 		}

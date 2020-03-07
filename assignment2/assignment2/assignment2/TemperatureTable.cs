@@ -15,32 +15,30 @@ namespace assignment2
 			int choice = -1;
 			while (choice != 0)
 			{
-				
 				choice = Input.ReadIntegerConsole();
 				switch (choice)
+				{
+					case 1:
 					{
-						case 1:
-						{
-							ShowCelsiusToFahrenheit();
-							break;
-						}
-						case 2:
-						{
-							ShowFahrenheitToCelsius();
-							break;
-						}
-						// case 0 was left empty to overcome the default since pressing 0 to close the menu will trigger the default case
-						case 0:
-						{
-							break;
-						}
-						default:
-						{
-							Console.Write("Invalid input Choose a number from the menu: ");
-							break;
-						}
+						ShowCelsiusToFahrenheit();
+						break;
 					}
-				
+					case 2:
+					{
+						ShowFahrenheitToCelsius();
+						break;
+					}
+					// case 0 was left empty to overcome the default since pressing 0 to close the menu will trigger the default case
+					case 0:
+					{
+						break;
+					}
+					default:
+					{
+						Console.Write("Invalid input Choose a number from the menu: ");
+						break;
+					}
+				}
 			}
 		}
 

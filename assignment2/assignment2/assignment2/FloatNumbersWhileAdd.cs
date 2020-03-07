@@ -2,7 +2,6 @@
 
 namespace assignment2
 {
-
 	public class FloatNumbersWhileAdd
 	{
 		private double _sum;
@@ -32,13 +31,11 @@ namespace assignment2
 				else
 
 					_sum += num;
-
 			}
 		}
 
 		private double ReadInput()
 		{
-
 			Console.Write("Write an amount to sum or zero to finish: ");
 
 			double num = Input.ReadDoubleConsole();

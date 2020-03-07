@@ -41,7 +41,7 @@ namespace assignment2
 					case 5:
 					{
 						WorkingSchedule obj = new WorkingSchedule();
-							obj.Start();
+						obj.Start();
 						break;
 					}
 					default:
@@ -55,7 +55,6 @@ namespace assignment2
 
 		private void writeMenuText()
 		{
-			
 			Console.WriteLine("---------------------------------");
 			Console.WriteLine("MAIN MENU");
 			Console.WriteLine("---------------------------------");
