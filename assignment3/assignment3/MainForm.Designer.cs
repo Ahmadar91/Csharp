@@ -156,6 +156,7 @@
 			this.calculateButton.TabIndex = 9;
 			this.calculateButton.Text = "Calculate";
 			this.calculateButton.UseVisualStyleBackColor = true;
+			this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
 			// 
 			// label5
 			// 

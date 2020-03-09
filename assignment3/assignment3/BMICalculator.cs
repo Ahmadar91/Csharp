@@ -5,21 +5,21 @@ namespace assignment3
 {
 	public class BMICalculator
 	{
-		private string name = "No name";
-		private double height = 0;
-		private double weight = 0;
-		private UnitTypes unit;
+		private string _name = "No name";
+		private double _height = 0;
+		private double _weight = 0;
+		private UnitTypes _unit;
 
 
 		public string GetName()
 		{
-			return this.name;
+			return this._name;
 		}
 		public void SetName(string value)
 		{
 			if (!string.IsNullOrEmpty(value))
 			{
-				this.name = value;
+				this._name = value;
 			}
 			
 		}
@@ -27,13 +27,13 @@ namespace assignment3
 
 		public double GetHeight()
 		{
-			return this.height;
+			return this._height;
 		}
 		public void SetHeight(double value)
 		{
 			if (value > 0)
 			{
-				this.height = value;
+				this._height = value;
 			}
 
 		}
@@ -41,13 +41,13 @@ namespace assignment3
 
 		public double GetWeight()
 		{
-			return this.height;
+			return this._height;
 		}
 		public void SetWeight(double value)
 		{
 			if (value > 0)
 			{
-				this.weight = value;
+				this._weight = value;
 			}
 
 		}
@@ -55,12 +55,12 @@ namespace assignment3
 
 		public UnitTypes GetUnitType()
 		{
-			return this.unit;
+			return this._unit;
 		}
 
 		public void SetUnitType(UnitTypes value)
 		{
-			this.unit = value;
+			this._unit = value;
 		}
 
 		public string BmiWeightCategory()
@@ -85,15 +85,15 @@ namespace assignment3
 
 		public double CalculateBmi()
 		{
-			double BMI;
-			if ((unit == UnitTypes.Metric) )
+			double bmi;
+			if ((_unit == UnitTypes.Metric) )
 			{
-				BMI = weight / Math.Pow(height, 2);
+				bmi = _weight / Math.Pow(_height, 2);
 			}
 			else
-				 BMI = (703.0 *weight) / Math.Pow(height, 2);
+				 bmi = (703.0 *_weight) / Math.Pow(_height, 2);
 
-			return BMI;
+			return bmi;
 		}
 	}
 }

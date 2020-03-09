@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BMICalculator.cs" />
+    <Compile Include="FuelConsumption.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
