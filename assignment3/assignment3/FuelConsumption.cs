@@ -2,9 +2,9 @@
 {
 	public class FuelConsumption
 	{
-		private int _currentReading;
-		private int _previousReading;
-		private int _fuelAmount;
+		private double _currentReading;
+		private double _previousReading;
+		private double _fuelAmount;
 		private double _fuelPrice;
 
 	
@@ -17,7 +17,7 @@
 			}
 		}
 
-		public int GetCurrentReading()
+		public double GetCurrentReading()
 		{
 			return this._currentReading;
 		}
@@ -30,7 +30,7 @@
 			}
 		}
 
-		public int GetPreviousReading()
+		public double GetPreviousReading()
 		{
 			return this._previousReading;
 		}
@@ -43,7 +43,7 @@
 			}
 		}
 
-		public int GetFuelAmount()
+		public double GetFuelAmount()
 		{
 			return this._fuelAmount;
 		}
