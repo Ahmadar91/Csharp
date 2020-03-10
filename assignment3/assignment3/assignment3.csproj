@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityLevels.cs" />
     <Compile Include="BMICalculator.cs" />
+    <Compile Include="BMRCalculator.cs" />
     <Compile Include="FuelConsumption.cs" />
+    <Compile Include="Genders.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

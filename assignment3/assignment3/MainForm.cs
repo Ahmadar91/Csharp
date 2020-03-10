@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace assignment3
 {
-	
+
 	public partial class MainForm : Form
 	{
 		private BMICalculator bmiCalc = new BMICalculator();
@@ -114,7 +114,7 @@ namespace assignment3
 			{
 				bmiCalc.SetName(nameTxt.Text);
 			}
-			
+
 		}
 
 		private void DisplayResults()
@@ -263,5 +263,12 @@ namespace assignment3
 			}
 			return ok;
 		}
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+
+		}
+
+
 	}
 }
