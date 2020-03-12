@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace assignment3
 {
-
 	public partial class MainForm : Form
 	{
 		private BMICalculator bmiCalc = new BMICalculator();
 		private FuelConsumption fc = new FuelConsumption();
+		private BMRCalculator bmr = new BMRCalculator();
+
 		public MainForm()
 		{
 			InitializeComponent();
@@ -36,14 +37,10 @@ namespace assignment3
 			heightLabel.Text = " Height (Feet)";
 			weightLabel.Text = "Weight (lb)";
 			norBmi.Text = string.Empty;
-
-
-
 		}
 
 		private bool ReadHeight()
 		{
-
 			double outValue = 0;
 			bool ok = double.TryParse(heightTxt.Text, out outValue);
 			if (ok)
@@ -66,14 +63,13 @@ namespace assignment3
 			if (!ok)
 			{
 				MessageBox.Show("invalid height value!", "Error");
-
 			}
+
 			return ok;
 		}
 
 		private bool ReadWeight()
 		{
-
 			double outValue = 0;
 			bool ok = double.TryParse(weightTxt.Text, out outValue);
 			if (ok)
@@ -96,8 +92,8 @@ namespace assignment3
 			if (!ok)
 			{
 				MessageBox.Show("Invalid weight value!", "Error");
-
 			}
+
 			return ok;
 		}
 
@@ -114,7 +110,6 @@ namespace assignment3
 			{
 				bmiCalc.SetName(nameTxt.Text);
 			}
-
 		}
 
 		private void DisplayResults()
@@ -176,7 +171,6 @@ namespace assignment3
 
 		private bool ReadCurrent()
 		{
-
 			int outValue = 0;
 			bool ok = int.TryParse(currentReadingTxtBox.Text, out outValue);
 			if (ok)
@@ -192,13 +186,13 @@ namespace assignment3
 			if (!ok)
 			{
 				MessageBox.Show("Invalid current Reading value!", "Error");
-
 			}
+
 			return ok;
 		}
+
 		private bool ReadPrevious()
 		{
-
 			int outValue = 0;
 			bool ok = int.TryParse(previousReadingTxtBox.Text, out outValue);
 			if (ok)
@@ -214,14 +208,13 @@ namespace assignment3
 			if (!ok)
 			{
 				MessageBox.Show("Invalid previous Reading value!", "Error");
-
 			}
+
 			return ok;
 		}
 
 		private bool ReadFuelAmount()
 		{
-
 			int outValue = 0;
 			bool ok = int.TryParse(currentAmountTxtBox.Text, out outValue);
 			if (ok)
@@ -237,13 +230,13 @@ namespace assignment3
 			if (!ok)
 			{
 				MessageBox.Show("Invalid amount Reading value!", "Error");
-
 			}
+
 			return ok;
 		}
+
 		private bool ReadFuelPrice()
 		{
-
 			double outValue = 0;
 			bool ok = double.TryParse(priceTxtBox.Text, out outValue);
 			if (ok)
@@ -259,16 +252,96 @@ namespace assignment3
 			if (!ok)
 			{
 				MessageBox.Show("Invalid price Reading value!", "Error");
-
 			}
+
 			return ok;
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
+		}
+
+		private void femaleRadio_CheckedChanged(object sender, EventArgs e)
+		{
+			bmr.SetGender(Genders.Female);
+		}
+
+		private void maleRadio_CheckedChanged(object sender, EventArgs e)
+		{
+			bmr.SetGender(Genders.Male);
+		}
+
+		private bool ReadAge()
+		{
+			int outValue = 0;
+			bool ok = int.TryParse(priceTxtBox.Text, out outValue);
+			if (ok)
+			{
+				if (outValue > 0)
+				{
+					bmr.SetAge(outValue);
+				}
+				else
+					ok = false;
+			}
+
+			if (!ok)
+			{
+				MessageBox.Show("Invalid price Age value!", "Error");
+			}
+
+			return ok;
+		}
+
+		private void bmrCalcButton_Click(object sender, EventArgs e)
+		{
+			bool ok = ReadInputBMR();
+
+			if (ok)
+			{
+				DisplayBMRResults();
+			}
+		}
+
+		private void DisplayBMRResults()
+		{
 
 		}
 
 
+		private bool ReadInputBMR()
+		{
+			return ReadAge() && ReadHeight() && ReadWeight();
+		}
+
+		private void extraActive_CheckedChanged(object sender, EventArgs e)
+		{
+			bmr.SetActivity(ActivityLevels.ExtraActive);
+		}
+
+		private void VeryActive_CheckedChanged(object sender, EventArgs e)
+		{
+			bmr.SetActivity(ActivityLevels.VeryActive);
+		}
+
+		private void moderatelyActive_CheckedChanged(object sender, EventArgs e)
+		{
+			bmr.SetActivity(ActivityLevels.ModeratelyActive);
+		}
+
+		private void lightlyActive_CheckedChanged(object sender, EventArgs e)
+		{
+			bmr.SetActivity(ActivityLevels.LightlyActive);
+		}
+
+		private void sedentary_CheckedChanged(object sender, EventArgs e)
+		{
+			bmr.SetActivity(ActivityLevels.Sedentary);
+		}
+
+		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

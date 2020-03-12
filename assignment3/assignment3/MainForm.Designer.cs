@@ -68,15 +68,15 @@
 			this.name = new System.Windows.Forms.Label();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.lightlyActive = new System.Windows.Forms.RadioButton();
 			this.ageTxt = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.maleRadio = new System.Windows.Forms.RadioButton();
 			this.femaleRadio = new System.Windows.Forms.RadioButton();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
-			this.radioButton4 = new System.Windows.Forms.RadioButton();
-			this.radioButton5 = new System.Windows.Forms.RadioButton();
+			this.sedentary = new System.Windows.Forms.RadioButton();
+			this.moderatelyActive = new System.Windows.Forms.RadioButton();
+			this.VeryActive = new System.Windows.Forms.RadioButton();
+			this.extraActive = new System.Windows.Forms.RadioButton();
 			this.bmrCalcButton = new System.Windows.Forms.Button();
 			this.unselectButton = new System.Windows.Forms.Button();
 			this.listBox1 = new System.Windows.Forms.ListBox();
@@ -533,11 +533,11 @@
 			// 
 			// groupBox6
 			// 
-			this.groupBox6.Controls.Add(this.radioButton5);
-			this.groupBox6.Controls.Add(this.radioButton4);
-			this.groupBox6.Controls.Add(this.radioButton3);
-			this.groupBox6.Controls.Add(this.radioButton1);
-			this.groupBox6.Controls.Add(this.radioButton2);
+			this.groupBox6.Controls.Add(this.extraActive);
+			this.groupBox6.Controls.Add(this.VeryActive);
+			this.groupBox6.Controls.Add(this.moderatelyActive);
+			this.groupBox6.Controls.Add(this.sedentary);
+			this.groupBox6.Controls.Add(this.lightlyActive);
 			this.groupBox6.Location = new System.Drawing.Point(12, 86);
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.Size = new System.Drawing.Size(373, 163);
@@ -545,16 +545,17 @@
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Activity level per week";
 			// 
-			// radioButton2
+			// lightlyActive
 			// 
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.Location = new System.Drawing.Point(6, 57);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(110, 21);
-			this.radioButton2.TabIndex = 1;
-			this.radioButton2.TabStop = true;
-			this.radioButton2.Text = "radioButton2";
-			this.radioButton2.UseVisualStyleBackColor = true;
+			this.lightlyActive.AutoSize = true;
+			this.lightlyActive.Location = new System.Drawing.Point(6, 57);
+			this.lightlyActive.Name = "lightlyActive";
+			this.lightlyActive.Size = new System.Drawing.Size(198, 21);
+			this.lightlyActive.TabIndex = 1;
+			this.lightlyActive.TabStop = true;
+			this.lightlyActive.Text = "Lightly active (1 to 3 times)";
+			this.lightlyActive.UseVisualStyleBackColor = true;
+			this.lightlyActive.CheckedChanged += new System.EventHandler(this.lightlyActive_CheckedChanged);
 			// 
 			// ageTxt
 			// 
@@ -582,6 +583,7 @@
 			this.maleRadio.TabStop = true;
 			this.maleRadio.Text = "Male";
 			this.maleRadio.UseVisualStyleBackColor = true;
+			this.maleRadio.CheckedChanged += new System.EventHandler(this.maleRadio_CheckedChanged);
 			// 
 			// femaleRadio
 			// 
@@ -593,50 +595,55 @@
 			this.femaleRadio.TabStop = true;
 			this.femaleRadio.Text = "Female";
 			this.femaleRadio.UseVisualStyleBackColor = true;
+			this.femaleRadio.CheckedChanged += new System.EventHandler(this.femaleRadio_CheckedChanged);
 			// 
-			// radioButton1
+			// sedentary
 			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(8, 30);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(110, 21);
-			this.radioButton1.TabIndex = 2;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "radioButton1";
-			this.radioButton1.UseVisualStyleBackColor = true;
+			this.sedentary.AutoSize = true;
+			this.sedentary.Location = new System.Drawing.Point(8, 30);
+			this.sedentary.Name = "sedentary";
+			this.sedentary.Size = new System.Drawing.Size(226, 21);
+			this.sedentary.TabIndex = 2;
+			this.sedentary.TabStop = true;
+			this.sedentary.Text = "Sedentary (little or no exercise)";
+			this.sedentary.UseVisualStyleBackColor = true;
+			this.sedentary.CheckedChanged += new System.EventHandler(this.sedentary_CheckedChanged);
 			// 
-			// radioButton3
+			// moderatelyActive
 			// 
-			this.radioButton3.AutoSize = true;
-			this.radioButton3.Location = new System.Drawing.Point(6, 84);
-			this.radioButton3.Name = "radioButton3";
-			this.radioButton3.Size = new System.Drawing.Size(110, 21);
-			this.radioButton3.TabIndex = 3;
-			this.radioButton3.TabStop = true;
-			this.radioButton3.Text = "radioButton3";
-			this.radioButton3.UseVisualStyleBackColor = true;
+			this.moderatelyActive.AutoSize = true;
+			this.moderatelyActive.Location = new System.Drawing.Point(6, 84);
+			this.moderatelyActive.Name = "moderatelyActive";
+			this.moderatelyActive.Size = new System.Drawing.Size(227, 21);
+			this.moderatelyActive.TabIndex = 3;
+			this.moderatelyActive.TabStop = true;
+			this.moderatelyActive.Text = "Moderately active (3 to 5 times)";
+			this.moderatelyActive.UseVisualStyleBackColor = true;
+			this.moderatelyActive.CheckedChanged += new System.EventHandler(this.moderatelyActive_CheckedChanged);
 			// 
-			// radioButton4
+			// VeryActive
 			// 
-			this.radioButton4.AutoSize = true;
-			this.radioButton4.Location = new System.Drawing.Point(6, 111);
-			this.radioButton4.Name = "radioButton4";
-			this.radioButton4.Size = new System.Drawing.Size(110, 21);
-			this.radioButton4.TabIndex = 4;
-			this.radioButton4.TabStop = true;
-			this.radioButton4.Text = "radioButton4";
-			this.radioButton4.UseVisualStyleBackColor = true;
+			this.VeryActive.AutoSize = true;
+			this.VeryActive.Location = new System.Drawing.Point(6, 111);
+			this.VeryActive.Name = "VeryActive";
+			this.VeryActive.Size = new System.Drawing.Size(186, 21);
+			this.VeryActive.TabIndex = 4;
+			this.VeryActive.TabStop = true;
+			this.VeryActive.Text = "Very active (6 to 7 times)";
+			this.VeryActive.UseVisualStyleBackColor = true;
+			this.VeryActive.CheckedChanged += new System.EventHandler(this.VeryActive_CheckedChanged);
 			// 
-			// radioButton5
+			// extraActive
 			// 
-			this.radioButton5.AutoSize = true;
-			this.radioButton5.Location = new System.Drawing.Point(6, 138);
-			this.radioButton5.Name = "radioButton5";
-			this.radioButton5.Size = new System.Drawing.Size(110, 21);
-			this.radioButton5.TabIndex = 5;
-			this.radioButton5.TabStop = true;
-			this.radioButton5.Text = "radioButton5";
-			this.radioButton5.UseVisualStyleBackColor = true;
+			this.extraActive.AutoSize = true;
+			this.extraActive.Location = new System.Drawing.Point(6, 138);
+			this.extraActive.Name = "extraActive";
+			this.extraActive.Size = new System.Drawing.Size(242, 21);
+			this.extraActive.TabIndex = 5;
+			this.extraActive.TabStop = true;
+			this.extraActive.Text = "Extra active, hard exercises or job";
+			this.extraActive.UseVisualStyleBackColor = true;
+			this.extraActive.CheckedChanged += new System.EventHandler(this.extraActive_CheckedChanged);
 			// 
 			// bmrCalcButton
 			// 
@@ -646,6 +653,7 @@
 			this.bmrCalcButton.TabIndex = 5;
 			this.bmrCalcButton.Text = "Calculate";
 			this.bmrCalcButton.UseVisualStyleBackColor = true;
+			this.bmrCalcButton.Click += new System.EventHandler(this.bmrCalcButton_Click);
 			// 
 			// unselectButton
 			// 
@@ -664,6 +672,7 @@
 			this.listBox1.Name = "listBox1";
 			this.listBox1.Size = new System.Drawing.Size(621, 244);
 			this.listBox1.TabIndex = 7;
+			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
 			// label10
 			// 
@@ -759,7 +768,7 @@
 		private System.Windows.Forms.Label categoryLabel;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.GroupBox groupBox6;
-		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.RadioButton lightlyActive;
 		private System.Windows.Forms.TextBox ageTxt;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.RadioButton maleRadio;
@@ -768,10 +777,10 @@
 		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.Button unselectButton;
 		private System.Windows.Forms.Button bmrCalcButton;
-		private System.Windows.Forms.RadioButton radioButton5;
-		private System.Windows.Forms.RadioButton radioButton4;
-		private System.Windows.Forms.RadioButton radioButton3;
-		private System.Windows.Forms.RadioButton radioButton1;
+		private System.Windows.Forms.RadioButton extraActive;
+		private System.Windows.Forms.RadioButton VeryActive;
+		private System.Windows.Forms.RadioButton moderatelyActive;
+		private System.Windows.Forms.RadioButton sedentary;
 	}
 }
 

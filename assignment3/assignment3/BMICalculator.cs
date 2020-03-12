@@ -21,7 +21,7 @@ namespace assignment3
 			{
 				this._name = value;
 			}
-			
+
 		}
 
 
@@ -86,12 +86,12 @@ namespace assignment3
 		public double CalculateBmi()
 		{
 			double bmi;
-			if ((_unit == UnitTypes.Metric) )
+			if ((_unit == UnitTypes.Metric))
 			{
 				bmi = _weight / Math.Pow(_height, 2);
 			}
 			else
-				 bmi = (703.0 *_weight) / Math.Pow(_height, 2);
+				bmi = (703.0 * _weight) / Math.Pow(_height, 2);
 
 			return bmi;
 		}
