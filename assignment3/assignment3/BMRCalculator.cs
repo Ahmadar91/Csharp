@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace assignment3
 {
@@ -6,11 +7,35 @@ namespace assignment3
 	{
 		private int _age = 0;
 		private Genders _gennder;
+		private UnitTypes _unit;
 		private ActivityLevels _activity;
 		private double _height = 0;
 		private double _weight = 0;
 		private double _factor = 0;
+		private string _name = "No name";
 
+
+		public string GetName()
+		{
+			return this._name;
+		}
+
+		public void SetName(string value)
+		{
+			if (!string.IsNullOrEmpty(value))
+			{
+				this._name = value;
+			}
+		}
+		public UnitTypes GetUnitTypes()
+		{
+			return _unit;
+		}
+
+		public void SetUnitTypes(UnitTypes value)
+		{
+			this._unit = value;
+		}
 		public double GetHeight()
 		{
 			return this._height;
@@ -79,7 +104,18 @@ namespace assignment3
 
 		public double CalculateBMR()
 		{
-			double BMR = 10 * _weight + 6.25 * _height - 5 * GetAge();
+			double BMR = 0;
+			if (this._unit == UnitTypes.American)
+			{
+				double poundToKg = _weight * 0.45359237;
+				double feetToCm = _height * 2.54;
+				BMR = 10 * poundToKg + 6.25 * feetToCm - 5 * GetAge();
+			}
+			else
+			{
+				BMR = 10 * _weight + 6.25 * _height - 5 * GetAge();
+			}
+			
 			if (GetGender() == Genders.Female)
 			{
 				return BMR - 161;
@@ -89,10 +125,10 @@ namespace assignment3
 		}
 
 
-		public void Factor()
+		public void Factor(ActivityLevels value)
 		{
 
-			switch (_activity)
+			switch (value)
 			{
 				case ActivityLevels.Sedentary:
 					{
@@ -123,9 +159,11 @@ namespace assignment3
 			}
 		}
 
-		public void Results()
+		public double MaintainCurrentWeight()
 		{
-			double bmr = CalculateBMR();
+			Factor(this._activity);
+			return CalculateBMR() * GetFactor();
 		}
+	
 	}
 }

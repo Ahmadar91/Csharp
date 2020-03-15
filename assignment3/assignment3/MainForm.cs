@@ -37,6 +37,7 @@ namespace assignment3
 			heightLabel.Text = " Height (Feet)";
 			weightLabel.Text = "Weight (lb)";
 			norBmi.Text = string.Empty;
+			label10.Text = "-1";
 		}
 
 		private bool ReadHeight()
@@ -50,10 +51,12 @@ namespace assignment3
 					if (bmiCalc.GetUnitType() == UnitTypes.American)
 					{
 						bmiCalc.SetHeight(outValue * 12.00);
+						bmr.SetHeight(outValue * 12.00);
 					}
 					else
 					{
 						bmiCalc.SetHeight(outValue / 100.0);
+						bmr.SetHeight(outValue);
 					}
 				}
 				else
@@ -76,14 +79,8 @@ namespace assignment3
 			{
 				if (outValue > 0)
 				{
-					if (bmiCalc.GetUnitType() == UnitTypes.American)
-					{
-						bmiCalc.SetWeight(outValue);
-					}
-					else
-					{
-						bmiCalc.SetWeight(outValue);
-					}
+					bmiCalc.SetWeight(outValue);
+					bmr.SetWeight(outValue);
 				}
 				else
 					ok = false;
@@ -109,6 +106,7 @@ namespace assignment3
 			if (!string.IsNullOrEmpty(nameTxt.Text))
 			{
 				bmiCalc.SetName(nameTxt.Text);
+				bmr.SetName(nameTxt.Text);
 			}
 		}
 
@@ -134,6 +132,7 @@ namespace assignment3
 		private void MetricRadio_CheckedChanged(object sender, EventArgs e)
 		{
 			bmiCalc.SetUnitType(UnitTypes.Metric);
+			bmr.SetUnitTypes(UnitTypes.Metric);
 			heightLabel.Text = " Height (cm)";
 			weightLabel.Text = "Weight (Kg)";
 		}
@@ -141,6 +140,7 @@ namespace assignment3
 		private void USRadio_CheckedChanged(object sender, EventArgs e)
 		{
 			bmiCalc.SetUnitType(UnitTypes.American);
+			bmr.SetUnitTypes(UnitTypes.American);
 			heightLabel.Text = " Height (Feet)";
 			weightLabel.Text = "Weight (lb)";
 		}
@@ -274,7 +274,7 @@ namespace assignment3
 		private bool ReadAge()
 		{
 			int outValue = 0;
-			bool ok = int.TryParse(priceTxtBox.Text, out outValue);
+			bool ok = int.TryParse(ageTxt.Text, out outValue);
 			if (ok)
 			{
 				if (outValue > 0)
@@ -287,7 +287,7 @@ namespace assignment3
 
 			if (!ok)
 			{
-				MessageBox.Show("Invalid price Age value!", "Error");
+				MessageBox.Show("Invalid Age value!", "Error");
 			}
 
 			return ok;
@@ -305,14 +305,21 @@ namespace assignment3
 
 		private void DisplayBMRResults()
 		{
-
+			string str = bmr.MaintainCurrentWeight().ToString("f2");
+			listBox1.Items.Add("BMR Results for" + bmr.GetName());
+			listBox1.Items.Add("Your BMR(calories/day)" + bmr.CalculateBMR());
+			listBox1.Items.Add("Calories to maintain your weight" + bmr.MaintainCurrentWeight().ToString("f2"));
 		}
 
 
 		private bool ReadInputBMR()
 		{
+			ReadName();
 			return ReadAge() && ReadHeight() && ReadWeight();
 		}
+
+
+
 
 		private void extraActive_CheckedChanged(object sender, EventArgs e)
 		{
@@ -341,7 +348,13 @@ namespace assignment3
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			label10.Text = listBox1.SelectedIndex.ToString();
+		}
 
+		private void unselectButton_Click(object sender, EventArgs e)
+		{
+			listBox1.ClearSelected();
+			
 		}
 	}
 }
