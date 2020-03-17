@@ -215,8 +215,8 @@ namespace assignment3
 
 		private bool ReadFuelAmount()
 		{
-			int outValue = 0;
-			bool ok = int.TryParse(currentAmountTxtBox.Text, out outValue);
+			double outValue = 0;
+			bool ok = double.TryParse(currentAmountTxtBox.Text, out outValue);
 			if (ok)
 			{
 				if (outValue > 0)
@@ -306,9 +306,14 @@ namespace assignment3
 		private void DisplayBMRResults()
 		{
 			string str = bmr.MaintainCurrentWeight().ToString("f2");
-			listBox1.Items.Add("BMR Results for" + bmr.GetName());
-			listBox1.Items.Add("Your BMR(calories/day)" + bmr.CalculateBMR());
-			listBox1.Items.Add("Calories to maintain your weight" + bmr.MaintainCurrentWeight().ToString("f2"));
+			listBox1.Items.Add("BMR Results for" + bmr.GetName() + "\n");
+			listBox1.Items.Add(($"{"Your BMR(calories/day)",-110} {Math.Round(bmr.CalculateBMR(), 1),1}"));
+			listBox1.Items.Add(($"{"Calories to maintain your weight)",-110} {Math.Round(bmr.MaintainCurrentWeight(), 1),10}"));
+			listBox1.Items.Add(($"{"Calories to lose 0,5 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() - 500), 1),10}"));
+			listBox1.Items.Add(($"{"Calories to lose 1 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() - 1000), 1),10}"));
+			listBox1.Items.Add(($"{"Calories to gain 0,5 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() + 500), 1),10}"));
+			listBox1.Items.Add(($"{"Calories to gain 1 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() + 1000), 1),10}"));
+			listBox1.Items.Add("\nLosing more than 1000 calories per day is to be avoided");
 		}
 
 
@@ -354,7 +359,7 @@ namespace assignment3
 		private void unselectButton_Click(object sender, EventArgs e)
 		{
 			listBox1.ClearSelected();
-			
+
 		}
 	}
 }

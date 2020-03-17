@@ -7,7 +7,7 @@
 		private double _fuelAmount;
 		private double _fuelPrice;
 
-	
+
 
 		public void SetCurrentReading(int value)
 		{
@@ -35,7 +35,7 @@
 			return this._previousReading;
 		}
 
-		public void SetFuelAmount(int value)
+		public void SetFuelAmount(double value)
 		{
 			if (value > 0)
 			{
@@ -69,7 +69,7 @@
 		public double LitPerKm()
 		{
 			return this._fuelAmount / GetKm();
-			
+
 		}
 
 		public double KmPerLit()
