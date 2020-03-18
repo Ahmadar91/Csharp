@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace assignment3
@@ -20,10 +13,10 @@ namespace assignment3
 		public MainForm()
 		{
 			InitializeComponent();
-			InitializeGUI();
+			InitializeGui();
 		}
 
-		private void InitializeGUI()
+		private void InitializeGui()
 		{
 			bmiResultsLabel.Text = string.Empty;
 			categoryLabel.Text = string.Empty;
@@ -38,11 +31,12 @@ namespace assignment3
 			weightLabel.Text = "Weight (lb)";
 			norBmi.Text = string.Empty;
 			label10.Text = "-1";
+		
 		}
 
 		private bool ReadHeight()
 		{
-			double outValue = 0;
+			double outValue;
 			bool ok = double.TryParse(heightTxt.Text, out outValue);
 			if (ok)
 			{
@@ -73,7 +67,7 @@ namespace assignment3
 
 		private bool ReadWeight()
 		{
-			double outValue = 0;
+			double outValue;
 			bool ok = double.TryParse(weightTxt.Text, out outValue);
 			if (ok)
 			{
@@ -94,7 +88,7 @@ namespace assignment3
 			return ok;
 		}
 
-		private bool ReadInputBMI()
+		private bool ReadInputBmi()
 		{
 			ReadName();
 			return ReadHeight() && ReadWeight();
@@ -121,7 +115,7 @@ namespace assignment3
 
 		private void BMICalcualteButton_Click(object sender, EventArgs e)
 		{
-			bool ok = ReadInputBMI();
+			bool ok = ReadInputBmi();
 
 			if (ok)
 			{
@@ -171,7 +165,7 @@ namespace assignment3
 
 		private bool ReadCurrent()
 		{
-			int outValue = 0;
+			int outValue;
 			bool ok = int.TryParse(currentReadingTxtBox.Text, out outValue);
 			if (ok)
 			{
@@ -193,7 +187,7 @@ namespace assignment3
 
 		private bool ReadPrevious()
 		{
-			int outValue = 0;
+			int outValue;
 			bool ok = int.TryParse(previousReadingTxtBox.Text, out outValue);
 			if (ok)
 			{
@@ -215,7 +209,7 @@ namespace assignment3
 
 		private bool ReadFuelAmount()
 		{
-			double outValue = 0;
+			double outValue;
 			bool ok = double.TryParse(currentAmountTxtBox.Text, out outValue);
 			if (ok)
 			{
@@ -237,7 +231,7 @@ namespace assignment3
 
 		private bool ReadFuelPrice()
 		{
-			double outValue = 0;
+			double outValue;
 			bool ok = double.TryParse(priceTxtBox.Text, out outValue);
 			if (ok)
 			{
@@ -273,7 +267,7 @@ namespace assignment3
 
 		private bool ReadAge()
 		{
-			int outValue = 0;
+			int outValue;
 			bool ok = int.TryParse(ageTxt.Text, out outValue);
 			if (ok)
 			{
@@ -307,7 +301,8 @@ namespace assignment3
 		{
 			string str = bmr.MaintainCurrentWeight().ToString("f2");
 			listBox1.Items.Add("BMR Results for" + bmr.GetName());
-			listBox1.Items.Add(($"{"Your BMR(calories/day)",-110} {Math.Round(bmr.CalculateBMR(), 1),15}"));
+			listBox1.ItemHeight = 1;
+			listBox1.Items.Add(($"{"Your BMR(calories/day)",-110} {Math.Round(bmr.CalculateBmr(), 1),15}"));
 			listBox1.Items.Add(($"{"Calories to maintain your weight)",-110} {Math.Round(bmr.MaintainCurrentWeight(), 1),13}"));
 			listBox1.Items.Add(($"{"Calories to lose 0,5 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() - 500), 1),12}"));
 			listBox1.Items.Add(($"{"Calories to lose 1 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() - 1000), 1),13}"));

@@ -1,17 +1,16 @@
-﻿using System;
-using System.Diagnostics;
+﻿
 
 namespace assignment3
 {
 	public class BMRCalculator
 	{
-		private int _age = 0;
-		private Genders _gennder;
+		private int _age;
+		private Genders _gender;
 		private UnitTypes _unit;
 		private ActivityLevels _activity;
-		private double _height = 0;
-		private double _weight = 0;
-		private double _factor = 0;
+		private double _height;
+		private double _weight;
+		private double _factor;
 		private string _name = "No name";
 
 
@@ -83,12 +82,12 @@ namespace assignment3
 
 		public void SetGender(Genders value)
 		{
-			this._gennder = value;
+			this._gender = value;
 		}
 
 		public Genders GetGender()
 		{
-			return this._gennder;
+			return this._gender;
 		}
 
 
@@ -102,26 +101,25 @@ namespace assignment3
 			return this._activity;
 		}
 
-		public double CalculateBMR()
+		public double CalculateBmr()
 		{
-			double BMR = 0;
+			double bmr;
 			if (this._unit == UnitTypes.American)
 			{
 				double poundToKg = _weight * 0.45359237;
 				double feetToCm = _height * 2.54;
-				BMR = 10 * poundToKg + 6.25 * feetToCm - 5 * GetAge();
+				bmr = 10 * poundToKg + 6.25 * feetToCm - 5 * GetAge();
 			}
 			else
 			{
-				BMR = 10 * _weight + 6.25 * _height - 5 * GetAge();
+				bmr = 10 * _weight + 6.25 * _height - 5 * GetAge();
 			}
 			
 			if (GetGender() == Genders.Female)
 			{
-				return BMR - 161;
+				return bmr - 161;
 			}
-			else
-				return BMR + 5;
+			return bmr + 5;
 		}
 
 
@@ -162,7 +160,7 @@ namespace assignment3
 		public double MaintainCurrentWeight()
 		{
 			Factor(this._activity);
-			return CalculateBMR() * GetFactor();
+			return CalculateBmr() * GetFactor();
 		}
 	
 	}

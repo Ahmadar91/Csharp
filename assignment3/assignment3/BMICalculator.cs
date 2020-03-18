@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Runtime.InteropServices;
+
 
 namespace assignment3
 {
 	public class BMICalculator
 	{
 		private string _name = "No name";
-		private double _height = 0;
-		private double _weight = 0;
+		private double _height;
+		private double _weight;
 		private UnitTypes _unit;
 
 
