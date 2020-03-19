@@ -31,7 +31,7 @@ namespace assignment3
 			weightLabel.Text = "Weight (lb)";
 			norBmi.Text = string.Empty;
 			label10.Text = "-1";
-		
+
 		}
 
 		private bool ReadHeight()
@@ -289,7 +289,7 @@ namespace assignment3
 
 		private void bmrCalcButton_Click(object sender, EventArgs e)
 		{
-			bool ok = ReadInputBMR();
+			bool ok = ReadInputBmr();
 
 			if (ok)
 			{
@@ -300,19 +300,18 @@ namespace assignment3
 		private void DisplayBMRResults()
 		{
 			string str = bmr.MaintainCurrentWeight().ToString("f2");
-			listBox1.Items.Add("BMR Results for" + bmr.GetName());
-			listBox1.ItemHeight = 1;
+			listBox1.Items.Add("BMR Results for " + bmr.GetName());
 			listBox1.Items.Add(($"{"Your BMR(calories/day)",-110} {Math.Round(bmr.CalculateBmr(), 1),15}"));
 			listBox1.Items.Add(($"{"Calories to maintain your weight)",-110} {Math.Round(bmr.MaintainCurrentWeight(), 1),13}"));
 			listBox1.Items.Add(($"{"Calories to lose 0,5 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() - 500), 1),12}"));
 			listBox1.Items.Add(($"{"Calories to lose 1 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() - 1000), 1),13}"));
 			listBox1.Items.Add(($"{"Calories to gain 0,5 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() + 500), 1),12}"));
 			listBox1.Items.Add(($"{"Calories to gain 1 kg per week)",-110} {Math.Round((bmr.MaintainCurrentWeight() + 1000), 1),13}"));
-			listBox1.Items.Add("\nLosing more than 1000 calories per day is to be avoided");
+			listBox1.Items.Add("Losing more than 1000 calories per day is to be avoided");
 		}
 
 
-		private bool ReadInputBMR()
+		private bool ReadInputBmr()
 		{
 			ReadName();
 			return ReadAge() && ReadHeight() && ReadWeight();
