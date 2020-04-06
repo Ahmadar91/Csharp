@@ -2,20 +2,20 @@
 {
 	public class RecipeManager
 	{
-		private Recipe[] _recipeList;
+		private Recipe[] recipeList;
 
 
 		public RecipeManager(int maxNumOfElements)
 		{
-			this._recipeList = maxNumOfElements > 50 ? new Recipe[50] : new Recipe[maxNumOfElements];
+			this.recipeList = maxNumOfElements > 50 ? new Recipe[50] : new Recipe[maxNumOfElements];
 		}
 
 
 		private int FindVacantPos()
 		{
-			for (int i = 0; i < _recipeList.Length; i++)
+			for (int i = 0; i < recipeList.Length; i++)
 			{
-				if (_recipeList[i] == null)
+				if (recipeList[i] == null)
 				{
 					return i;
 				}
@@ -27,9 +27,9 @@
 		public int CurrentNumberOfItems()
 		{
 			int count = 0;
-			for (int i = 0; i < _recipeList.Length; i++)
+			for (int i = 0; i < recipeList.Length; i++)
 			{
-				if (_recipeList[i] != null)
+				if (recipeList[i] != null)
 				{
 					count++;
 				}
@@ -39,7 +39,7 @@
 		}
 		public Recipe GetRecipeAt(int index)
 		{
-			return CheckIndex(index) ? _recipeList[index] : null;
+			return CheckIndex(index) ? recipeList[index] : null;
 		}
 
 
@@ -47,13 +47,13 @@
 		{
 			int index = FindVacantPos();
 			if (index < 0 || newRecipe == null) return false;
-			_recipeList[index] = newRecipe;
+			recipeList[index] = newRecipe;
 			return true;
 		}
 
 
 
-		public bool Add(string name, Category category, string[] ingredients)
+		public bool Add(string name,string description ,Category category, string[] ingredients)
 		{
 			bool bok = false;
 			int index = FindVacantPos();
@@ -61,10 +61,11 @@
 			{
 				Recipe recipe = new Recipe(ingredients.Length);
 				recipe.Name = name;
+				recipe.Description = description;
 				recipe.IngredientArray = ingredients;
 				recipe.Category = category;
 
-				_recipeList[index] = recipe;
+				recipeList[index] = recipe;
 				bok = true;
 
 			}
@@ -75,17 +76,17 @@
 		public bool ChangeElement(int index, Recipe recipe)
 		{
 			if (!CheckIndex(index)) return false;
-			_recipeList[index] = recipe;
+			recipeList[index] = recipe;
 			return true;
 		}
 
 
-		public bool ChangeElement(int index)
+		public bool DeleteElement(int index)
 		{
 			bool bok = false;
 			if (CheckIndex(index))
 			{
-				_recipeList[index] = null;
+				recipeList[index] = null;
 				bok = true;
 			}
 
@@ -95,7 +96,7 @@
 
 		public string[] GetIngredients(int index)
 		{
-			return _recipeList[index].IngredientArray;
+			return recipeList[index].IngredientArray;
 		}
 
 		public string[] RecipeListToString()
@@ -104,15 +105,15 @@
 			string[] str = new string[CurrentNumberOfItems()];
 
 
-			for (int i = 0; i < _recipeList.Length; i++)
+			for (int i = 0; i < recipeList.Length; i++)
 			{
-				if (_recipeList[i] == null)
+				if (recipeList[i] == null)
 				{
 					break;
 				}
 
 
-				str[i] = _recipeList[i].ToString();
+				str[i] = recipeList[i].ToString();
 			}
 			return str;
 		}
@@ -123,7 +124,7 @@
 
 		private bool CheckIndex(int index)
 		{
-			return index >= 0 && index < _recipeList.Length;
+			return index >= 0 && index < recipeList.Length;
 
 		}
 

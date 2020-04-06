@@ -1,28 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace assignment4
 {
 	public partial class FormMain : Form
 	{
-		private const int _NumofIngredients = 20;
-		private const int _maxNumofElements = 50;
-		private RecipeManager _recipeMngr = new RecipeManager(_maxNumofElements);
-		private Recipe _currRecipe;
+		private const int numOfIngredients = 20;
+		private const int maxNumOfElements = 50;
+		 RecipeManager recipeMngr;
+		 Recipe currRecipe;
 		public FormMain()
 		{
-			_currRecipe = new Recipe(_NumofIngredients);
-
 			InitializeComponent();
+			recipeMngr = new RecipeManager(maxNumOfElements);
+			InitializeRecipe();
+
 			InitializeGUI();
 		}
+
+		private void InitializeRecipe()
+		{
+			currRecipe = new Recipe(numOfIngredients);
+
+		}
+
 		private void InitializeGUI()
 		{
 			CategoryCombo.Items.Add("Meat");
@@ -38,15 +41,16 @@ namespace assignment4
 
 		private void AddIngredientsButton_Click(object sender, EventArgs e)
 		{
-			FormIngredients dlg = new FormIngredients(_currRecipe);
+			FormIngredients dlg = new FormIngredients(currRecipe);
 			DialogResult dlgResult = dlg.ShowDialog();
 
 			if (dlgResult == DialogResult.OK)
 			{
-				if (_currRecipe.CurrentNumOfIngredients() <= 0)
+				if (currRecipe.CurrentNumOfIngredients() <= 0)
 				{
 					MessageBox.Show("No Ingriedients specified!");
-					_recipeMngr.Add(_currRecipe);
+					
+					recipeMngr.Add(currRecipe);
 					UpdateGUI();
 				}
 			}
@@ -60,14 +64,12 @@ namespace assignment4
 				return;
 			}
 
-			_currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
-			_currRecipe.Name = RecipeNameText.Text.Trim();
-			_currRecipe.Description = textBox.Text.Trim();
-			_recipeMngr.Add(_currRecipe);
-
+			currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
+			currRecipe.Name = RecipeNameText.Text.Trim();
+			currRecipe.Description = textBox.Text.Trim();
+			recipeMngr.Add(currRecipe);
 			UpdateGUI();
-			_currRecipe.DefaultValues();
-
+			InitializeRecipe();
 
 		}
 
@@ -112,7 +114,7 @@ namespace assignment4
 		public void UpdateGUI()
 		{
 
-			string[] recipeListStrings = _recipeMngr.RecipeListToString();
+			string[] recipeListStrings = recipeMngr.RecipeListToString();
 			listBox.Items.Clear();
 			RecipeNameText.Clear();
 			textBox.Clear();

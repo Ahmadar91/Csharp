@@ -6,25 +6,25 @@ namespace assignment4
 {
 	public class Recipe
 	{
-		private string _description;
-		private string[] _ingredientArray;
-		private string _name;
+		private string description;
+		private string[] ingredientArray;
+		private string name;
 
 		public Category Category { get; set; }
 
 		public Recipe(int maxNumOfIngredients)
 		{
-			this._ingredientArray = maxNumOfIngredients > 50 ? new string[50] : new string[maxNumOfIngredients];
+			this.ingredientArray = maxNumOfIngredients > 50 ? new string[50] : new string[maxNumOfIngredients];
 			DefaultValues();
 		}
 		public string Description
 		{
-			get => _description;
+			get => description;
 			set
 			{
 				if (!string.IsNullOrEmpty(value))
 				{
-					_description = value;
+					description = value;
 				}
 			}
 
@@ -32,34 +32,34 @@ namespace assignment4
 
 		public string[] IngredientArray
 		{
-			get => _ingredientArray;
-			set => _ingredientArray = value;
+			get => ingredientArray;
+			set => ingredientArray = value;
 		}
 
 		public string Name
 		{
-			get => _name;
+			get => name;
 			set
 			{
 				if (!string.IsNullOrEmpty(value))
 				{
-					_name = value;
+					name = value;
 				}
 			}
 
 
 		}
 
-		public int MaxNumOfIngredients => _ingredientArray.Length;
+		public int MaxNumOfIngredients => ingredientArray.Length;
 
 
 		public int CurrentNumOfIngredients()
 		{
 			int count = 0;
-			for (int i = 0; i < _ingredientArray.Length; i++)
+			for (int i = 0; i < ingredientArray.Length; i++)
 			{
 
-				if (!string.IsNullOrEmpty(_ingredientArray[i]))
+				if (!string.IsNullOrEmpty(ingredientArray[i]))
 				{
 					count++;
 				}
@@ -75,40 +75,40 @@ namespace assignment4
 		{
 			int index = FindVacantPos();
 			if (index < 0) return false;
-			_ingredientArray[index] = value;
+			ingredientArray[index] = value;
 			return true;
 		}
 
 		public bool ChangeIngredientAt(int index, string value)
 		{
 			if (!CheckIndex(index)) return false;
-			_ingredientArray[index] = value;
+			ingredientArray[index] = value;
 			return true;
 		}
 
 		private bool CheckIndex(int index)
 		{
-			return index >= 0 && index < _ingredientArray.Length;
+			return index >= 0 && index < ingredientArray.Length;
 
 		}
 
 
 		public void DefaultValues()
 		{
-			for (int i = 0; i < _ingredientArray.Length; i++)
+			for (int i = 0; i < ingredientArray.Length; i++)
 			{
-				_ingredientArray[i] = string.Empty;
+				ingredientArray[i] = string.Empty;
 			}
-			_description = string.Empty;
-			_name = string.Empty;
+			description = string.Empty;
+			name = string.Empty;
 			Category = Category.Vegetarian;
 		}
 
 		private int FindVacantPos()
 		{
-			for (int i = 0; i < _ingredientArray.Length; i++)
+			for (int i = 0; i < ingredientArray.Length; i++)
 			{
-				if (string.IsNullOrEmpty(_ingredientArray[i]))
+				if (string.IsNullOrEmpty(ingredientArray[i]))
 				{
 					return i;
 				}
@@ -119,13 +119,13 @@ namespace assignment4
 
 		public override string ToString()
 		{
-			int chars = Math.Min(_description.Length, 15);
-			string descriptionText = _description.Substring(0, chars);
+			int chars = Math.Min(description.Length, 15);
+			string descriptionText = description.Substring(0, chars);
 
 			if (string.IsNullOrEmpty(descriptionText))
 				descriptionText = " No Description!";
 
-			string output = string.Format("{0,2} {1,35} {2,35} {3,40}", _name, CurrentNumOfIngredients(), Category.ToString(),
+			string output = string.Format("{0,2} {1,35} {2,35} {3,40}", name, CurrentNumOfIngredients(), Category.ToString(),
 				descriptionText);
 			return output;
 		}
