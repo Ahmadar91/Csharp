@@ -170,7 +170,7 @@
 			this.listBox.Name = "listBox";
 			this.listBox.Size = new System.Drawing.Size(710, 580);
 			this.listBox.TabIndex = 6;
-			this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+		
 			// 
 			// FormMain
 			// 
@@ -184,7 +184,7 @@
 			this.Controls.Add(this.Name);
 			this.Controls.Add(this.AddRecipeBox);
 			this.Controls.Add(this.groupBox1);
-			this.Name = "FormMain";
+		
 			this.Text = "Apu\'s Cook Book";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();

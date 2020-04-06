@@ -22,7 +22,7 @@ namespace assignment4
 			get => _description;
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (!string.IsNullOrEmpty(value))
 				{
 					_description = value;
 				}
@@ -41,7 +41,7 @@ namespace assignment4
 			get => _name;
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (!string.IsNullOrEmpty(value))
 				{
 					_name = value;
 				}
@@ -50,12 +50,16 @@ namespace assignment4
 
 		}
 
+		public int MaxNumOfIngredients => _ingredientArray.Length;
+
+
 		public int CurrentNumOfIngredients()
 		{
 			int count = 0;
-			foreach (string ingredient in _ingredientArray)
+			for (int i = 0; i < _ingredientArray.Length; i++)
 			{
-				if (!string.IsNullOrEmpty(ingredient))
+
+				if (!string.IsNullOrEmpty(_ingredientArray[i]))
 				{
 					count++;
 				}
@@ -93,18 +97,18 @@ namespace assignment4
 		{
 			for (int i = 0; i < _ingredientArray.Length; i++)
 			{
-				_ingredientArray[i] = String.Empty;
+				_ingredientArray[i] = string.Empty;
 			}
-			this._description = "";
-			this._name = "";
-			this.Category = Category.Vegetarian;
+			_description = string.Empty;
+			_name = string.Empty;
+			Category = Category.Vegetarian;
 		}
 
 		private int FindVacantPos()
 		{
 			for (int i = 0; i < _ingredientArray.Length; i++)
 			{
-				if (!string.IsNullOrEmpty(_ingredientArray[i]))
+				if (string.IsNullOrEmpty(_ingredientArray[i]))
 				{
 					return i;
 				}
@@ -117,12 +121,15 @@ namespace assignment4
 		{
 			int chars = Math.Min(_description.Length, 15);
 			string descriptionText = _description.Substring(0, chars);
+
 			if (string.IsNullOrEmpty(descriptionText))
 				descriptionText = " No Description!";
 
-			return string.Format("{0,20} {1,4} {2,-12} {3,-15}", _name, CurrentNumOfIngredients(), this.Category.ToString(),
+			string output = string.Format("{0,2} {1,35} {2,35} {3,40}", _name, CurrentNumOfIngredients(), Category.ToString(),
 				descriptionText);
+			return output;
 		}
+
 	}
 
 }

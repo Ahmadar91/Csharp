@@ -46,17 +46,12 @@
 		public bool Add(Recipe newRecipe)
 		{
 			int index = FindVacantPos();
-			if (index < 0 && newRecipe == null) return false;
+			if (index < 0 || newRecipe == null) return false;
 			_recipeList[index] = newRecipe;
 			return true;
 		}
 
-		/*
-		public bool Add(string name, string[] ingredients)
-		{
-			return true;
-		}
-		*/
+
 
 		public bool Add(string name, Category category, string[] ingredients)
 		{
@@ -106,12 +101,18 @@
 		public string[] RecipeListToString()
 		{
 
-			string[] str = new string[_recipeList.Length];
+			string[] str = new string[CurrentNumberOfItems()];
 
 
 			for (int i = 0; i < _recipeList.Length; i++)
 			{
-				str[i] = _recipeList.ToString();
+				if (_recipeList[i] == null)
+				{
+					break;
+				}
+
+
+				str[i] = _recipeList[i].ToString();
 			}
 			return str;
 		}
