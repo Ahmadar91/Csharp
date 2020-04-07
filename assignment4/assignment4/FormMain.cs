@@ -141,6 +141,7 @@ namespace assignment4
 				recipeMngr.ChangeElement(listBox.SelectedIndex, currRecipe);
 			}
 			UpdateGUI();
+			InitializeRecipe();
 		}
 
 		private void listBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -238,7 +238,6 @@
 			this.Controls.Add(this.AddRecipeBox);
 			this.Controls.Add(this.groupBox1);
 			this.Margin = new System.Windows.Forms.Padding(7);
-			this.Name = "FormMain";
 			this.Text = "Apu\'s Cook Book";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
