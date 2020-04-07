@@ -44,6 +44,7 @@
 			this.DelButton = new System.Windows.Forms.Button();
 			this.EditButton = new System.Windows.Forms.Button();
 			this.ClearSelect = new System.Windows.Forms.Button();
+			this.deleteAll = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -177,7 +178,7 @@
 			// 
 			// DelButton
 			// 
-			this.DelButton.Location = new System.Drawing.Point(728, 748);
+			this.DelButton.Location = new System.Drawing.Point(605, 749);
 			this.DelButton.Name = "DelButton";
 			this.DelButton.Size = new System.Drawing.Size(119, 46);
 			this.DelButton.TabIndex = 7;
@@ -187,7 +188,7 @@
 			// 
 			// EditButton
 			// 
-			this.EditButton.Location = new System.Drawing.Point(915, 748);
+			this.EditButton.Location = new System.Drawing.Point(814, 749);
 			this.EditButton.Name = "EditButton";
 			this.EditButton.Size = new System.Drawing.Size(119, 47);
 			this.EditButton.TabIndex = 8;
@@ -197,7 +198,7 @@
 			// 
 			// ClearSelect
 			// 
-			this.ClearSelect.Location = new System.Drawing.Point(1092, 747);
+			this.ClearSelect.Location = new System.Drawing.Point(1012, 748);
 			this.ClearSelect.Name = "ClearSelect";
 			this.ClearSelect.Size = new System.Drawing.Size(119, 47);
 			this.ClearSelect.TabIndex = 9;
@@ -205,11 +206,22 @@
 			this.ClearSelect.UseVisualStyleBackColor = true;
 			this.ClearSelect.Click += new System.EventHandler(this.ClearSelect_Click);
 			// 
+			// deleteAll
+			// 
+			this.deleteAll.Location = new System.Drawing.Point(1198, 748);
+			this.deleteAll.Name = "deleteAll";
+			this.deleteAll.Size = new System.Drawing.Size(117, 47);
+			this.deleteAll.TabIndex = 10;
+			this.deleteAll.Text = "Delete All";
+			this.deleteAll.UseVisualStyleBackColor = true;
+			this.deleteAll.Click += new System.EventHandler(this.deleteAll_Click);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1366, 831);
+			this.Controls.Add(this.deleteAll);
 			this.Controls.Add(this.ClearSelect);
 			this.Controls.Add(this.EditButton);
 			this.Controls.Add(this.DelButton);
@@ -246,6 +258,7 @@
 		private System.Windows.Forms.Button DelButton;
 		private System.Windows.Forms.Button EditButton;
 		private System.Windows.Forms.Button ClearSelect;
+		private System.Windows.Forms.Button deleteAll;
 	}
 }
 
