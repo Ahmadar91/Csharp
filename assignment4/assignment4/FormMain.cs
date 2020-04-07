@@ -137,7 +137,7 @@ namespace assignment4
 			{
 				currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
 				currRecipe.Name = RecipeNameText.Text.Trim();
-				currRecipe.Description = textBox.Text.Trim();
+				currRecipe.Description = textBox.Text.Trim(); 
 				recipeMngr.ChangeElement(listBox.SelectedIndex, currRecipe);
 			}
 			UpdateGUI();
@@ -154,6 +154,11 @@ namespace assignment4
 				CategoryCombo.SelectedIndex = (int)currRecipe.Category;
 				RecipeNameText.Text = currRecipe.Name;
 			}
+		}
+
+		private void ClearSelect_Click(object sender, EventArgs e)
+		{
+			listBox.ClearSelected();
 		}
 	}
 }
