@@ -133,19 +133,14 @@ namespace assignment4
 
 		private void EditButton_Click(object sender, EventArgs e)
 		{
-			FormIngredients dlg = new FormIngredients(currRecipe);
-			DialogResult dlgResult = dlg.ShowDialog();
-
-			if (dlgResult == DialogResult.OK)
+			if (listBox.SelectedIndex >= 0 && listBox.SelectedIndex < recipeMngr.CurrentNumberOfItems())
 			{
-				if (currRecipe.CurrentNumOfIngredients() <= 0)
-				{
-					MessageBox.Show("No Ingriedients specified!");
-
-					recipeMngr.Add(currRecipe);
-					UpdateGUI();
-				}
+				currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
+				currRecipe.Name = RecipeNameText.Text.Trim();
+				currRecipe.Description = textBox.Text.Trim();
+				recipeMngr.ChangeElement(listBox.SelectedIndex, currRecipe);
 			}
+			UpdateGUI();
 		}
 
 		private void listBox_SelectedIndexChanged(object sender, EventArgs e)
