@@ -55,30 +55,26 @@
 			this.groupBox1.Controls.Add(this.Category);
 			this.groupBox1.Controls.Add(this.RecipeNameText);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(28, 86);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
+			this.groupBox1.Location = new System.Drawing.Point(12, 37);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(7);
-			this.groupBox1.Size = new System.Drawing.Size(1340, 1607);
+			this.groupBox1.Size = new System.Drawing.Size(564, 695);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Add new recipe";
 			// 
 			// textBox
 			// 
-			this.textBox.Location = new System.Drawing.Point(48, 414);
-			this.textBox.Margin = new System.Windows.Forms.Padding(7);
+			this.textBox.Location = new System.Drawing.Point(20, 179);
 			this.textBox.Multiline = true;
 			this.textBox.Name = "textBox";
-			this.textBox.Size = new System.Drawing.Size(1248, 1146);
+			this.textBox.Size = new System.Drawing.Size(528, 498);
 			this.textBox.TabIndex = 5;
 			// 
 			// AddIngredientsButton
 			// 
-			this.AddIngredientsButton.Location = new System.Drawing.Point(848, 224);
-			this.AddIngredientsButton.Margin = new System.Windows.Forms.Padding(7);
+			this.AddIngredientsButton.Location = new System.Drawing.Point(357, 97);
 			this.AddIngredientsButton.Name = "AddIngredientsButton";
-			this.AddIngredientsButton.Size = new System.Drawing.Size(382, 76);
+			this.AddIngredientsButton.Size = new System.Drawing.Size(161, 33);
 			this.AddIngredientsButton.TabIndex = 4;
 			this.AddIngredientsButton.Text = "Add ingredients";
 			this.AddIngredientsButton.UseVisualStyleBackColor = true;
@@ -87,48 +83,43 @@
 			// CategoryCombo
 			// 
 			this.CategoryCombo.FormattingEnabled = true;
-			this.CategoryCombo.Location = new System.Drawing.Point(442, 236);
-			this.CategoryCombo.Margin = new System.Windows.Forms.Padding(7);
+			this.CategoryCombo.Location = new System.Drawing.Point(186, 102);
 			this.CategoryCombo.Name = "CategoryCombo";
-			this.CategoryCombo.Size = new System.Drawing.Size(294, 45);
+			this.CategoryCombo.Size = new System.Drawing.Size(126, 24);
 			this.CategoryCombo.TabIndex = 3;
 			// 
 			// Category
 			// 
 			this.Category.AutoSize = true;
 			this.Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Category.Location = new System.Drawing.Point(38, 236);
-			this.Category.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+			this.Category.Location = new System.Drawing.Point(16, 102);
 			this.Category.Name = "Category";
-			this.Category.Size = new System.Drawing.Size(188, 47);
+			this.Category.Size = new System.Drawing.Size(76, 20);
 			this.Category.TabIndex = 2;
 			this.Category.Text = "Category";
 			// 
 			// RecipeNameText
 			// 
-			this.RecipeNameText.Location = new System.Drawing.Point(442, 123);
-			this.RecipeNameText.Margin = new System.Windows.Forms.Padding(7);
+			this.RecipeNameText.Location = new System.Drawing.Point(186, 53);
 			this.RecipeNameText.Name = "RecipeNameText";
-			this.RecipeNameText.Size = new System.Drawing.Size(812, 44);
+			this.RecipeNameText.Size = new System.Drawing.Size(344, 22);
 			this.RecipeNameText.TabIndex = 1;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(38, 123);
-			this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+			this.label1.Location = new System.Drawing.Point(16, 53);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(368, 47);
+			this.label1.Size = new System.Drawing.Size(151, 20);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Name of the recipe";
 			// 
 			// AddRecipeBox
 			// 
-			this.AddRecipeBox.Location = new System.Drawing.Point(107, 1730);
-			this.AddRecipeBox.Margin = new System.Windows.Forms.Padding(7);
+			this.AddRecipeBox.Location = new System.Drawing.Point(45, 748);
 			this.AddRecipeBox.Name = "AddRecipeBox";
-			this.AddRecipeBox.Size = new System.Drawing.Size(1152, 109);
+			this.AddRecipeBox.Size = new System.Drawing.Size(485, 47);
 			this.AddRecipeBox.TabIndex = 1;
 			this.AddRecipeBox.Text = "Add Recipe";
 			this.AddRecipeBox.UseVisualStyleBackColor = true;
@@ -138,10 +129,9 @@
 			// 
 			this.Name.AutoSize = true;
 			this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Name.Location = new System.Drawing.Point(1427, 215);
-			this.Name.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+			this.Name.Location = new System.Drawing.Point(601, 93);
 			this.Name.Name = "Name";
-			this.Name.Size = new System.Drawing.Size(130, 47);
+			this.Name.Size = new System.Drawing.Size(53, 20);
 			this.Name.TabIndex = 2;
 			this.Name.Text = "Name";
 			// 
@@ -149,10 +139,9 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(1924, 183);
-			this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+			this.label2.Location = new System.Drawing.Point(810, 79);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(147, 94);
+			this.label2.Size = new System.Drawing.Size(60, 40);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "No. of\r\n ingred";
 			// 
@@ -160,10 +149,9 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(2308, 222);
-			this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+			this.label3.Location = new System.Drawing.Point(972, 96);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(188, 47);
+			this.label3.Size = new System.Drawing.Size(76, 20);
 			this.label3.TabIndex = 4;
 			this.label3.Text = "Category";
 			// 
@@ -171,30 +159,27 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(2719, 222);
-			this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+			this.label4.Location = new System.Drawing.Point(1145, 96);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(229, 47);
+			this.label4.Size = new System.Drawing.Size(95, 20);
 			this.label4.TabIndex = 5;
 			this.label4.Text = "Description";
 			// 
 			// listBox
 			// 
 			this.listBox.FormattingEnabled = true;
-			this.listBox.ItemHeight = 37;
-			this.listBox.Location = new System.Drawing.Point(1437, 310);
-			this.listBox.Margin = new System.Windows.Forms.Padding(7);
+			this.listBox.ItemHeight = 16;
+			this.listBox.Location = new System.Drawing.Point(605, 134);
 			this.listBox.Name = "listBox";
-			this.listBox.Size = new System.Drawing.Size(1681, 1336);
+			this.listBox.Size = new System.Drawing.Size(710, 580);
 			this.listBox.TabIndex = 6;
 			this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
 			// 
 			// DelButton
 			// 
-			this.DelButton.Location = new System.Drawing.Point(1730, 1730);
-			this.DelButton.Margin = new System.Windows.Forms.Padding(7);
+			this.DelButton.Location = new System.Drawing.Point(728, 748);
 			this.DelButton.Name = "DelButton";
-			this.DelButton.Size = new System.Drawing.Size(283, 106);
+			this.DelButton.Size = new System.Drawing.Size(119, 46);
 			this.DelButton.TabIndex = 7;
 			this.DelButton.Text = "Delete";
 			this.DelButton.UseVisualStyleBackColor = true;
@@ -202,10 +187,9 @@
 			// 
 			// EditButton
 			// 
-			this.EditButton.Location = new System.Drawing.Point(2173, 1730);
-			this.EditButton.Margin = new System.Windows.Forms.Padding(7);
+			this.EditButton.Location = new System.Drawing.Point(915, 748);
 			this.EditButton.Name = "EditButton";
-			this.EditButton.Size = new System.Drawing.Size(283, 109);
+			this.EditButton.Size = new System.Drawing.Size(119, 47);
 			this.EditButton.TabIndex = 8;
 			this.EditButton.Text = "Edit";
 			this.EditButton.UseVisualStyleBackColor = true;
@@ -213,10 +197,9 @@
 			// 
 			// ClearSelect
 			// 
-			this.ClearSelect.Location = new System.Drawing.Point(2594, 1727);
-			this.ClearSelect.Margin = new System.Windows.Forms.Padding(7);
+			this.ClearSelect.Location = new System.Drawing.Point(1092, 747);
 			this.ClearSelect.Name = "ClearSelect";
-			this.ClearSelect.Size = new System.Drawing.Size(283, 109);
+			this.ClearSelect.Size = new System.Drawing.Size(119, 47);
 			this.ClearSelect.TabIndex = 9;
 			this.ClearSelect.Text = "Clear Selected";
 			this.ClearSelect.UseVisualStyleBackColor = true;
@@ -224,9 +207,9 @@
 			// 
 			// FormMain
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(3209, 1922);
+			this.ClientSize = new System.Drawing.Size(1366, 831);
 			this.Controls.Add(this.ClearSelect);
 			this.Controls.Add(this.EditButton);
 			this.Controls.Add(this.DelButton);
@@ -237,7 +220,6 @@
 			this.Controls.Add(this.Name);
 			this.Controls.Add(this.AddRecipeBox);
 			this.Controls.Add(this.groupBox1);
-			this.Margin = new System.Windows.Forms.Padding(7);
 			this.Text = "Apu\'s Cook Book";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();

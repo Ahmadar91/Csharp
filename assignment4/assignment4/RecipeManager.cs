@@ -1,4 +1,6 @@
-﻿namespace assignment4
+﻿using System.Threading;
+
+namespace assignment4
 {
 	public class RecipeManager
 	{
@@ -73,6 +75,11 @@
 			return bok;
 		}
 
+		public Recipe[] RecipeArray()
+		{
+			return recipeList;
+		}
+
 		public bool ChangeElement(int index, Recipe recipe)
 		{
 			if (!CheckIndex(index)) return false;
@@ -86,9 +93,14 @@
 			bool bok = false;
 			if (CheckIndex(index))
 			{
-				recipeList[index] = null;
+				for (int i = index; i < recipeList.Length - 1; i++)
+				{
+					recipeList[i] = recipeList[i + 1];
+				}
 				bok = true;
 			}
+
+
 
 			return bok;
 		}
@@ -107,14 +119,11 @@
 
 			for (int i = 0; i < recipeList.Length; i++)
 			{
-				if (recipeList[i] == null)
+				if (recipeList[i] != null)
 				{
-
-				}
-				else
-
-
 					str[i] = recipeList[i].ToString();
+				}
+
 			}
 			return str;
 		}

@@ -10,7 +10,7 @@ namespace assignment4
 		private const int numOfIngredients = 20;
 		private const int maxNumOfElements = 50;
 		RecipeManager recipeMngr;
-		Recipe currRecipe;
+		private Recipe currRecipe;
 		public FormMain()
 		{
 			InitializeComponent();
@@ -50,10 +50,15 @@ namespace assignment4
 				if (currRecipe.CurrentNumOfIngredients() <= 0)
 				{
 					MessageBox.Show("No Ingriedients specified!");
-
+					if (!CheckInput())
+					{
+						MessageBox.Show("No Recipe specified!");
+						return;
+					}
 					recipeMngr.Add(currRecipe);
 					UpdateGUI();
 				}
+
 			}
 		}
 
@@ -61,26 +66,27 @@ namespace assignment4
 		private void AddRecipeBox_Click(object sender, EventArgs e)
 		{
 
-			// if (currRecipe != null)
-			// {
-			// 	
-			// }
-			//else
+			if (!CheckInput())
 			{
-				if (!CheckInput())
+				MessageBox.Show("No Recipe specified!");
+				return;
+			}
+
+
+			currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
+			currRecipe.Name = RecipeNameText.Text.Trim();
+			currRecipe.Description = textBox.Text.Trim();
+			for (int j = 0; j < recipeMngr.RecipeArray().Length; j++)
+			{
+				if (currRecipe.Equals(recipeMngr.RecipeArray()[j]))
 				{
+					MessageBox.Show("Recipe Already Exists");
 					return;
 				}
-
-				currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
-				currRecipe.Name = RecipeNameText.Text.Trim();
-				currRecipe.Description = textBox.Text.Trim();
-				recipeMngr.Add(currRecipe);
-				UpdateGUI();
-				InitializeRecipe();
 			}
-		
-
+			recipeMngr.Add(currRecipe);
+			UpdateGUI();
+			InitializeRecipe();
 		}
 
 
@@ -103,24 +109,13 @@ namespace assignment4
 
 		private bool ReadName()
 		{
-			if (!string.IsNullOrEmpty(RecipeNameText.Text))
+			if (!string.IsNullOrEmpty(textBox.Text))
 			{
 				return true;
 			}
 			return false;
 		}
 
-		private void InitializeOutput()
-		{
-
-		}
-		private void MainForm_Load(object sender, EventArgs e)
-
-		{
-
-
-
-		}
 		public void UpdateGUI()
 		{
 
@@ -130,13 +125,13 @@ namespace assignment4
 			textBox.Clear();
 			listBox.Items.AddRange(recipeListStrings);
 
-			InitializeOutput();
 		}
 
 		private void DelButton_Click(object sender, EventArgs e)
 		{
 			listBox.Items.Add("clicked");
 			recipeMngr.DeleteElement(listBox.SelectedIndex);
+			listBox.ClearSelected();
 			UpdateGUI();
 		}
 
@@ -146,20 +141,23 @@ namespace assignment4
 			{
 				currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
 				currRecipe.Name = RecipeNameText.Text.Trim();
-				currRecipe.Description = textBox.Text.Trim(); 
+				currRecipe.Description = textBox.Text.Trim();
 				recipeMngr.ChangeElement(listBox.SelectedIndex, currRecipe);
+				InitializeRecipe();
 			}
 			UpdateGUI();
 			listBox.ClearSelected();
-			InitializeRecipe();
 		}
 
 		private void listBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
+
 			RecipeNameText.Clear();
 			textBox.Clear();
+
 			if (listBox.SelectedIndex >= 0 && listBox.SelectedIndex < recipeMngr.CurrentNumberOfItems())
 			{
+				InitializeRecipe();
 				currRecipe = recipeMngr.GetRecipeAt(listBox.SelectedIndex);
 				textBox.Text = currRecipe.Description;
 				CategoryCombo.SelectedIndex = (int)currRecipe.Category;
