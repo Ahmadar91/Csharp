@@ -39,8 +39,15 @@ namespace assignment4
 			RecipeListBox.Items.Clear();
 			toolTip2.SetToolTip(IngredientText, "Example: 2 dl milk");
 			NumLabel.Text = m_recipe.CurrentNumOfIngredients().ToString();
+			PopulateListBox();
 
 		}
+
+		private void PopulateListBox()
+		{
+			RecipeListBox.Items.AddRange(m_recipe.IngredientArray);
+		}
+
 
 		private void AddRecipeButton_Click(object sender, System.EventArgs e)
 		{
@@ -85,9 +92,24 @@ namespace assignment4
 			return false;
 		}
 
+		private void EditRecipeButton_Click(object sender, System.EventArgs e)
+		{
 
+		}
 
+		private void DeleteRecipeButton_Click(object sender, System.EventArgs e)
+		{
 
+		}
 
+		private void RecipeListBox_SelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			IngredientText.Clear();
+			if (RecipeListBox.SelectedIndex >= 0 && RecipeListBox.SelectedIndex < m_recipe.MaxNumOfIngredients)
+			{
+				IngredientText.Text = m_recipe.IngredientArray[RecipeListBox.SelectedIndex];
+
+			}
+		}
 	}
 }

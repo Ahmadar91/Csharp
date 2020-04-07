@@ -32,11 +32,11 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.NumLabel = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.IngredientText = new System.Windows.Forms.TextBox();
-			this.AddRecipeButton = new System.Windows.Forms.Button();
-			this.RecipeListBox = new System.Windows.Forms.ListBox();
-			this.EditRecipeButton = new System.Windows.Forms.Button();
 			this.DeleteRecipeButton = new System.Windows.Forms.Button();
+			this.EditRecipeButton = new System.Windows.Forms.Button();
+			this.RecipeListBox = new System.Windows.Forms.ListBox();
+			this.AddRecipeButton = new System.Windows.Forms.Button();
+			this.IngredientText = new System.Windows.Forms.TextBox();
 			this.OkButton = new System.Windows.Forms.Button();
 			this.CancelButton = new System.Windows.Forms.Button();
 			this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
@@ -78,12 +78,35 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Ingredient";
 			// 
-			// IngredientText
+			// DeleteRecipeButton
 			// 
-			this.IngredientText.Location = new System.Drawing.Point(17, 43);
-			this.IngredientText.Name = "IngredientText";
-			this.IngredientText.Size = new System.Drawing.Size(462, 27);
-			this.IngredientText.TabIndex = 0;
+			this.DeleteRecipeButton.Location = new System.Drawing.Point(502, 240);
+			this.DeleteRecipeButton.Name = "DeleteRecipeButton";
+			this.DeleteRecipeButton.Size = new System.Drawing.Size(88, 48);
+			this.DeleteRecipeButton.TabIndex = 4;
+			this.DeleteRecipeButton.Text = "Delete";
+			this.DeleteRecipeButton.UseVisualStyleBackColor = true;
+			this.DeleteRecipeButton.Click += new System.EventHandler(this.DeleteRecipeButton_Click);
+			// 
+			// EditRecipeButton
+			// 
+			this.EditRecipeButton.Location = new System.Drawing.Point(502, 186);
+			this.EditRecipeButton.Name = "EditRecipeButton";
+			this.EditRecipeButton.Size = new System.Drawing.Size(88, 48);
+			this.EditRecipeButton.TabIndex = 3;
+			this.EditRecipeButton.Text = "Edit";
+			this.EditRecipeButton.UseVisualStyleBackColor = true;
+			this.EditRecipeButton.Click += new System.EventHandler(this.EditRecipeButton_Click);
+			// 
+			// RecipeListBox
+			// 
+			this.RecipeListBox.FormattingEnabled = true;
+			this.RecipeListBox.ItemHeight = 20;
+			this.RecipeListBox.Location = new System.Drawing.Point(17, 102);
+			this.RecipeListBox.Name = "RecipeListBox";
+			this.RecipeListBox.Size = new System.Drawing.Size(462, 464);
+			this.RecipeListBox.TabIndex = 2;
+			this.RecipeListBox.SelectedIndexChanged += new System.EventHandler(this.RecipeListBox_SelectedIndexChanged);
 			// 
 			// AddRecipeButton
 			// 
@@ -95,32 +118,12 @@
 			this.AddRecipeButton.UseVisualStyleBackColor = true;
 			this.AddRecipeButton.Click += new System.EventHandler(this.AddRecipeButton_Click);
 			// 
-			// RecipeListBox
+			// IngredientText
 			// 
-			this.RecipeListBox.FormattingEnabled = true;
-			this.RecipeListBox.ItemHeight = 20;
-			this.RecipeListBox.Location = new System.Drawing.Point(17, 102);
-			this.RecipeListBox.Name = "RecipeListBox";
-			this.RecipeListBox.Size = new System.Drawing.Size(462, 464);
-			this.RecipeListBox.TabIndex = 2;
-			// 
-			// EditRecipeButton
-			// 
-			this.EditRecipeButton.Location = new System.Drawing.Point(502, 186);
-			this.EditRecipeButton.Name = "EditRecipeButton";
-			this.EditRecipeButton.Size = new System.Drawing.Size(88, 48);
-			this.EditRecipeButton.TabIndex = 3;
-			this.EditRecipeButton.Text = "Edit";
-			this.EditRecipeButton.UseVisualStyleBackColor = true;
-			// 
-			// DeleteRecipeButton
-			// 
-			this.DeleteRecipeButton.Location = new System.Drawing.Point(502, 240);
-			this.DeleteRecipeButton.Name = "DeleteRecipeButton";
-			this.DeleteRecipeButton.Size = new System.Drawing.Size(88, 48);
-			this.DeleteRecipeButton.TabIndex = 4;
-			this.DeleteRecipeButton.Text = "Delete";
-			this.DeleteRecipeButton.UseVisualStyleBackColor = true;
+			this.IngredientText.Location = new System.Drawing.Point(17, 43);
+			this.IngredientText.Name = "IngredientText";
+			this.IngredientText.Size = new System.Drawing.Size(462, 27);
+			this.IngredientText.TabIndex = 0;
 			// 
 			// OkButton
 			// 

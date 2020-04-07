@@ -41,6 +41,7 @@ namespace assignment4
 
 		private void AddIngredientsButton_Click(object sender, EventArgs e)
 		{
+
 			FormIngredients dlg = new FormIngredients(currRecipe);
 			DialogResult dlgResult = dlg.ShowDialog();
 
@@ -123,6 +124,41 @@ namespace assignment4
 			InitializeOutput();
 		}
 
+		private void DelButton_Click(object sender, EventArgs e)
+		{
+			listBox.Items.Add("clicked");
+			recipeMngr.DeleteElement(listBox.SelectedIndex);
+			UpdateGUI();
+		}
 
+		private void EditButton_Click(object sender, EventArgs e)
+		{
+			FormIngredients dlg = new FormIngredients(currRecipe);
+			DialogResult dlgResult = dlg.ShowDialog();
+
+			if (dlgResult == DialogResult.OK)
+			{
+				if (currRecipe.CurrentNumOfIngredients() <= 0)
+				{
+					MessageBox.Show("No Ingriedients specified!");
+
+					recipeMngr.Add(currRecipe);
+					UpdateGUI();
+				}
+			}
+		}
+
+		private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			RecipeNameText.Clear();
+			textBox.Clear();
+			if (listBox.SelectedIndex >= 0 && listBox.SelectedIndex < recipeMngr.CurrentNumberOfItems())
+			{
+				currRecipe = recipeMngr.GetRecipeAt(listBox.SelectedIndex);
+				textBox.Text = currRecipe.Description;
+				CategoryCombo.SelectedIndex = (int)currRecipe.Category;
+				RecipeNameText.Text = currRecipe.Name;
+			}
+		}
 	}
 }

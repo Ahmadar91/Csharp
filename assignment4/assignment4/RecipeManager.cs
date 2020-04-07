@@ -53,7 +53,7 @@
 
 
 
-		public bool Add(string name,string description ,Category category, string[] ingredients)
+		public bool Add(string name, string description, Category category, string[] ingredients)
 		{
 			bool bok = false;
 			int index = FindVacantPos();
@@ -109,11 +109,12 @@
 			{
 				if (recipeList[i] == null)
 				{
-					break;
+
 				}
+				else
 
 
-				str[i] = recipeList[i].ToString();
+					str[i] = recipeList[i].ToString();
 			}
 			return str;
 		}

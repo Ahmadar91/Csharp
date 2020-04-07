@@ -172,6 +172,7 @@
 			this.listBox.Name = "listBox";
 			this.listBox.Size = new System.Drawing.Size(710, 580);
 			this.listBox.TabIndex = 6;
+			this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
 			// 
 			// DelButton
 			// 
@@ -181,6 +182,7 @@
 			this.DelButton.TabIndex = 7;
 			this.DelButton.Text = "Delete";
 			this.DelButton.UseVisualStyleBackColor = true;
+			this.DelButton.Click += new System.EventHandler(this.DelButton_Click);
 			// 
 			// EditButton
 			// 
@@ -190,6 +192,7 @@
 			this.EditButton.TabIndex = 8;
 			this.EditButton.Text = "Edit";
 			this.EditButton.UseVisualStyleBackColor = true;
+			this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
 			// 
 			// FormMain
 			// 
