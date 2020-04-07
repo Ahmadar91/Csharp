@@ -41,6 +41,8 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.listBox = new System.Windows.Forms.ListBox();
+			this.DelButton = new System.Windows.Forms.Button();
+			this.EditButton = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -170,13 +172,32 @@
 			this.listBox.Name = "listBox";
 			this.listBox.Size = new System.Drawing.Size(710, 580);
 			this.listBox.TabIndex = 6;
-		
+			// 
+			// DelButton
+			// 
+			this.DelButton.Location = new System.Drawing.Point(751, 749);
+			this.DelButton.Name = "DelButton";
+			this.DelButton.Size = new System.Drawing.Size(119, 46);
+			this.DelButton.TabIndex = 7;
+			this.DelButton.Text = "Delete";
+			this.DelButton.UseVisualStyleBackColor = true;
+			// 
+			// EditButton
+			// 
+			this.EditButton.Location = new System.Drawing.Point(1040, 749);
+			this.EditButton.Name = "EditButton";
+			this.EditButton.Size = new System.Drawing.Size(119, 47);
+			this.EditButton.TabIndex = 8;
+			this.EditButton.Text = "Edit";
+			this.EditButton.UseVisualStyleBackColor = true;
 			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1351, 831);
+			this.Controls.Add(this.EditButton);
+			this.Controls.Add(this.DelButton);
 			this.Controls.Add(this.listBox);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
@@ -184,7 +205,6 @@
 			this.Controls.Add(this.Name);
 			this.Controls.Add(this.AddRecipeBox);
 			this.Controls.Add(this.groupBox1);
-		
 			this.Text = "Apu\'s Cook Book";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
@@ -208,6 +228,8 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ListBox listBox;
+		private System.Windows.Forms.Button DelButton;
+		private System.Windows.Forms.Button EditButton;
 	}
 }
 

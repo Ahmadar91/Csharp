@@ -63,6 +63,7 @@ namespace assignment4
 
 		private void UpdateGUI()
 		{
+			IngredientText.Clear();
 			NumLabel.Text = m_recipe.CurrentNumOfIngredients().ToString();
 			RecipeListBox.Items.Clear();
 			RecipeListBox.Items.AddRange(m_recipe.IngredientArray);

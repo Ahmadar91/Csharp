@@ -9,8 +9,8 @@ namespace assignment4
 	{
 		private const int numOfIngredients = 20;
 		private const int maxNumOfElements = 50;
-		 RecipeManager recipeMngr;
-		 Recipe currRecipe;
+		RecipeManager recipeMngr;
+		Recipe currRecipe;
 		public FormMain()
 		{
 			InitializeComponent();
@@ -49,7 +49,7 @@ namespace assignment4
 				if (currRecipe.CurrentNumOfIngredients() <= 0)
 				{
 					MessageBox.Show("No Ingriedients specified!");
-					
+
 					recipeMngr.Add(currRecipe);
 					UpdateGUI();
 				}
