@@ -60,17 +60,26 @@ namespace assignment4
 
 		private void AddRecipeBox_Click(object sender, EventArgs e)
 		{
-			if (!CheckInput())
-			{
-				return;
-			}
 
-			currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
-			currRecipe.Name = RecipeNameText.Text.Trim();
-			currRecipe.Description = textBox.Text.Trim();
-			recipeMngr.Add(currRecipe);
-			UpdateGUI();
-			InitializeRecipe();
+			// if (currRecipe != null)
+			// {
+			// 	
+			// }
+			//else
+			{
+				if (!CheckInput())
+				{
+					return;
+				}
+
+				currRecipe.Category = (Category)CategoryCombo.SelectedIndex;
+				currRecipe.Name = RecipeNameText.Text.Trim();
+				currRecipe.Description = textBox.Text.Trim();
+				recipeMngr.Add(currRecipe);
+				UpdateGUI();
+				InitializeRecipe();
+			}
+		
 
 		}
 
@@ -141,6 +150,7 @@ namespace assignment4
 				recipeMngr.ChangeElement(listBox.SelectedIndex, currRecipe);
 			}
 			UpdateGUI();
+			listBox.ClearSelected();
 			InitializeRecipe();
 		}
 
@@ -160,6 +170,7 @@ namespace assignment4
 		private void ClearSelect_Click(object sender, EventArgs e)
 		{
 			listBox.ClearSelected();
+			InitializeRecipe();
 		}
 	}
 }
