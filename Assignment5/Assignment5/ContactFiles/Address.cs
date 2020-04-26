@@ -57,7 +57,8 @@
 		}
 		public override string ToString()
 		{
-			return $"{0,-25}{1,-8}{2,-10}{3}, street,zipCode, city, GetCountryString()";
+			return string.Format("{0,-25}{1,-8}{2,-10}{3}", street, zipCode, city, GetCountryString());
+
 		}
 
 
