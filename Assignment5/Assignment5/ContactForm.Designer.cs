@@ -286,6 +286,7 @@
 			this.cancel.TabIndex = 4;
 			this.cancel.Text = "Cancel";
 			this.cancel.UseVisualStyleBackColor = true;
+			
 			// 
 			// ContactForm
 			// 
