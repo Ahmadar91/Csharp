@@ -61,7 +61,8 @@ namespace Assignment5.ContactFiles
 		}
 		public override string ToString()
 		{
-			return string.Format("{0,-20} {1, -20} {2, -20} {3, -20}", FullName, address.ToString());
+			string str = string.Format("{0,-20} {1, -20} {2, -20} {3, -20}", FullName, address.ToString());
+			return str;
 		}
 	}
 }

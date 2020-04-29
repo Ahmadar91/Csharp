@@ -59,8 +59,16 @@ namespace Assignment5
 			contact.FName = firstNameTxt.Text;
 			contact.LName = lastNameTxt.Text;
 			Address addr = ReadAddress();
-			contact.Address = addr;
-
+			if (addr.Validate())
+			{
+				contact.Address = addr;
+			}
+			else
+			{
+				string errMessage = "First name, last name and city are required input! \nplease try again!";
+				MessageBox.Show(errMessage);
+			}
+			
 			bool ok = contact.Validate();
 			if (ok)
 			{
