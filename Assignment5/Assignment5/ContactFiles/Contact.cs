@@ -5,9 +5,10 @@ namespace Assignment5.ContactFiles
 	public class Contact
 	{
 		private Address address;
-
-		private string fName = string.Empty;
-		private string lName = string.Empty;
+		private Email email;
+		private Phone phone;
+		private string fName;
+		private string lName;
 		public Address Address
 		{
 			get => address;
@@ -18,8 +19,17 @@ namespace Assignment5.ContactFiles
 		{
 			get => fName + lName;
 		}
+		public Email Email
+		{
+			get => email;
+			set => email = value;
+		}
 
-
+		public Phone Phone
+		{
+			get => phone;
+			set => phone = value;
+		}
 
 		public string FName
 		{
@@ -37,32 +47,24 @@ namespace Assignment5.ContactFiles
 		public Contact()
 		{
 			address = new Address();
+			email = new Email();
+			phone = new Phone();
 		}
 
-		public Contact(string fName, string lName, Address address)
+		public Contact(string fName, string lName, Address address , Phone phone, Email email)
 		{
 			this.fName = fName;
 			this.lName = lName;
 			this.address = address;
+			this.phone = phone;
+			this.email = email;
 
 		}
 
-
-		public Contact(Contact other)
-		{
-			this.fName = other.fName;
-			this.lName = other.lName;
-			this.Address = other.address;
-		}
-
-		public bool Validate()
-		{
-			return true;
-		}
 		public override string ToString()
 		{
-			string str = string.Format("{0,-20} {1, -20} {2, -20} {3, -20}", FullName, address.ToString());
-			return str;
+			return string.Format("{0,-20} {1, -20} {2, -20} {3, -20}", FullName, address, phone,email );
 		}
+
 	}
 }
