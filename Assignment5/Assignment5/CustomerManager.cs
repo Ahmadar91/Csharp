@@ -73,11 +73,11 @@ namespace Assignment5
 
 		public Customer GetCustomer(int index)
 		{
-			if (CheckIndex(index))
-			{
-				return null;
-			}
-			return customers[index];
+			 if (CheckIndex(index))
+			 {
+			 	return customers[index];
+			 }
+			 return null;
 		}
 
 		public string[] GetCustomersInfo()

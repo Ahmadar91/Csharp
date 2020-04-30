@@ -163,14 +163,13 @@ namespace Assignment5
 				//IsCorrectInfo = true;
 				// SetToDefult();
 
-			}
+				}
 				else
 				{
 					MessageBox.Show("Invalided Input! insert Data to Procced or Cancel!");
 					IsCorrectInfo = false;
 				}
-
-			}
+		}
 
 		private void ContactForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
