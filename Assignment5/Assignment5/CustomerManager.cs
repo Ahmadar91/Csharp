@@ -77,11 +77,7 @@ namespace Assignment5
 			{
 				return null;
 			}
-
-			Customer origObj = customers[index];
-			Customer copyObj = new Customer(origObj);
-
-			return copyObj;
+			return customers[index];
 		}
 
 		public string[] GetCustomersInfo()

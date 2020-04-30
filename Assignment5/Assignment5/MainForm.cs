@@ -18,15 +18,15 @@ namespace Assignment5
 			ContactForm contactForm = new ContactForm("Add new Customer");
 			int index = listBox.SelectedIndex;
 			contactForm.ShowDialog();
-			if (index != -1)
-			{
-				contactForm.ContactData = customerManager.GetCustomer(index).Contact;
+			//if (index != -1)
+			//{
+			//	contactForm.ContactData = customerManager.GetCustomer(index).Contact;
 				if (contactForm.ShowDialog() == DialogResult.OK)
 				{
 					customerManager.AddCustomer(contactForm.ContactData);
 					UpdateCustomerList();
 				}
-			}
+			//}
 		}
 
 		private void UpdateCustomerList()

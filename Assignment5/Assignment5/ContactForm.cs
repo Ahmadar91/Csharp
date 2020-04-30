@@ -158,7 +158,7 @@ namespace Assignment5
 				if (ReadInput() && contact.Address.Validate())
 				{
 					
-				MessageBox.Show("dadadadadad");
+				// MessageBox.Show("dadadadadad");
 				// MessageBox.Show(string.Format("{0} {1}\n{2} {3}", contact.Address.ToString(), contact.Email.ToString(), contact.Phone.ToString()));
 				//IsCorrectInfo = true;
 				// SetToDefult();
