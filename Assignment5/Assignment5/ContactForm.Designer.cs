@@ -301,7 +301,6 @@
 			this.Controls.Add(this.groupBox1);
 			this.Name = "ContactForm";
 			this.Text = "Form1";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContactForm_FormClosing_1);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);

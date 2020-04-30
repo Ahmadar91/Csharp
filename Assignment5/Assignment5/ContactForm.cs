@@ -142,8 +142,38 @@ namespace Assignment5
 			return "";
 		}
 
-		private void ContactForm_FormClosing_1(object sender, FormClosingEventArgs e)
+		
+		private void cancel_Click_1(object sender, EventArgs e)
 		{
+			this.Close();
+		}
+
+		private void buttonOk_Click(object sender, EventArgs e)
+		{
+		
+			//if ((MessageBox.Show("Are you sure you want to add this customer", "Add Customer Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+			//	MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+			//{
+			//	isCanceled = false;
+				if (ReadInput() && contact.Address.Validate())
+				{
+				MessageBox.Show("dadadadadad");
+				// MessageBox.Show(string.Format("{0} {1}\n{2} {3}", contact.Address.ToString(), contact.Email.ToString(), contact.Phone.ToString()));
+				//IsCorrectInfo = true;
+				// SetToDefult();
+
+			}
+				else
+				{
+					MessageBox.Show("Invalided Input! insert Data to Procced or Cancel!");
+					IsCorrectInfo = false;
+				}
+
+			}
+
+		private void ContactForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+
 			const string message =
 				"Are you sure that you would like to close the form?";
 			const string caption = "Form Closing";
@@ -157,42 +187,22 @@ namespace Assignment5
 				// cancel the closure of the form.
 				e.Cancel = true;
 			}
-		
 		}
-
-		private void cancel_Click_1(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-
-		private void buttonOk_Click(object sender, EventArgs e)
-		{
-
-			if ((MessageBox.Show("Are you sure you want to add this customer", "Add Customer Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
-			{
-				isCanceled = false;
-				if (ReadInput() && contact.Address.Validate())
-				{
-
-					// MessageBox.Show(string.Format("{0} {1}\n{2} {3}", contact.Address.ToString(), contact.Email.ToString(), contact.Phone.ToString()));
-					IsCorrectInfo = true;
-					SetToDefult();
-
-				}
-				else
-				{
-					MessageBox.Show("Invalided Input! insert Data to Procced or Cancel!");
-					IsCorrectInfo = false;
-				}
-
-			}
-			else
-			{
-				IsCorrectInfo = false;
-				IsCanceled = true;
-			}
-
-		}
+	
 	}
 }
+
+
+// const string message =
+// "Are you sure that you would like to close the form?";
+// const string caption = "Form Closing";
+// var result = MessageBox.Show(message, caption,
+// MessageBoxButtons.YesNo,
+// MessageBoxIcon.Question);
+//
+// // If the no button was pressed ...
+// if (result == DialogResult.No)
+// {
+// // cancel the closure of the form.
+// e.Cancel = true;
+// }
