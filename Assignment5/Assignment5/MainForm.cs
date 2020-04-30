@@ -16,8 +16,8 @@ namespace Assignment5
 		private void addBtn_Click(object sender, EventArgs e)
 		{
 			ContactForm contactForm = new ContactForm("Add new Customer");
-			contactForm.ShowDialog();
 			int index = listBox.SelectedIndex;
+			contactForm.ShowDialog();
 			if (index != -1)
 			{
 				contactForm.ContactData = customerManager.GetCustomer(index).Contact;

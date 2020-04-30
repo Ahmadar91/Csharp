@@ -139,7 +139,7 @@ namespace Assignment5
 
 		public override string ToString()
 		{
-			return "";
+			return contact.ToString();
 		}
 
 		
@@ -157,6 +157,7 @@ namespace Assignment5
 			//	isCanceled = false;
 				if (ReadInput() && contact.Address.Validate())
 				{
+					
 				MessageBox.Show("dadadadadad");
 				// MessageBox.Show(string.Format("{0} {1}\n{2} {3}", contact.Address.ToString(), contact.Email.ToString(), contact.Phone.ToString()));
 				//IsCorrectInfo = true;
