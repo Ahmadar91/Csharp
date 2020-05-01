@@ -6,7 +6,7 @@ namespace Assignment5
 	public class CustomerManager
 	{
 		private List<Customer> customers;
-		private int id = 0;
+		private int id = 100;
 
 		public int Count
 		{
@@ -28,7 +28,7 @@ namespace Assignment5
 		{
 			if (contact != null)
 			{
-				Customer customer = new Customer(contact);
+				Customer customer = new Customer(contact, GetNewId.ToString());
 				customers.Add(customer);
 				return true;
 			}

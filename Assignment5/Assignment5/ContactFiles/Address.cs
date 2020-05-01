@@ -1,4 +1,6 @@
-﻿namespace Assignment5.ContactFiles
+﻿using System;
+
+namespace Assignment5.ContactFiles
 {
 	public class Address
 	{
@@ -53,7 +55,13 @@
 
 		public string GetCountryString()
 		{
-			return country.ToString().Replace("_", " ");
+			//Console.WriteLine(country.ToString());
+			string str = Enum.GetName(typeof(Countries), country);
+			if (str.Contains("_"))
+			{
+				return str.Replace("_", " ");
+			}
+			return str;
 		}
 		public override string ToString()
 		{

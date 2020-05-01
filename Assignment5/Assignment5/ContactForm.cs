@@ -8,7 +8,6 @@ namespace Assignment5
 	public partial class ContactForm : Form
 	{
 		private Contact contact = new Contact();
-		private bool closeForm;
 		private bool isCorrect;
 
 		public bool IsCorrect
@@ -35,7 +34,6 @@ namespace Assignment5
 
 			countryCombo.DataSource = Enum.GetNames(typeof(Countries));
 			countryCombo.SelectedIndex = (int) Countries.Sverige;
-			closeForm = false;
 
 
 		}
@@ -143,13 +141,12 @@ namespace Assignment5
 			
 			if (ReadInput() && contact.Address.Validate())
 			{
-				closeForm = true;
 				isCorrect = true;
 			}
 			else
 			{
 				isCorrect = false;
-				MessageBox.Show("Invalided Input! insert Correct Data to Proceed or Cancel!");
+				MessageBox.Show("Invalided Input! insert Correct Data or Zip code must be in numbers!");
 				
 			}
 		}

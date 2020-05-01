@@ -56,9 +56,12 @@ namespace Assignment5
 				contactForm.ContactData = customerManager.GetCustomer(index).Contact;
 				if (contactForm.ShowDialog() == DialogResult.OK)
 				{
-					Customer edited = customerManager.GetCustomer(index);
-					customerManager.ChangeCustomer(edited, index);
-					UpdateCustomerList();
+					if (contactForm.IsCorrect)
+					{
+						Customer edited = customerManager.GetCustomer(index);
+						customerManager.ChangeCustomer(edited, index);
+						UpdateCustomerList();
+					}
 				}
 			
 			}

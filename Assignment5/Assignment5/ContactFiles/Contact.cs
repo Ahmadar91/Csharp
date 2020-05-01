@@ -17,7 +17,7 @@ namespace Assignment5.ContactFiles
 
 		public string FullName
 		{
-			get => fName + lName;
+			get => fName + " "+ lName;
 		}
 		public Email Email
 		{
@@ -63,7 +63,7 @@ namespace Assignment5.ContactFiles
 
 		public override string ToString()
 		{
-			return string.Format("{0,-20} {1, -20} {2, -20} {3, -20}", FullName, address, phone,email );
+			return string.Format("{0,-20} {1, -20} {2, -20} {3, -20}", FullName, address.ToString(), phone.ToString(),email.ToString() );
 		}
 
 	}

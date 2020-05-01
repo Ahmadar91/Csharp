@@ -47,7 +47,7 @@ namespace Assignment5.ContactFiles
 		}
 		public override string ToString()
 		{
-			return string.Format("{0,-20} {1, -20}", home, work);
+			return string.Format("{0,-20} {1, -3}", home, work);
 		}
 	}
 }

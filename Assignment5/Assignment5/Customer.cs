@@ -41,7 +41,8 @@ namespace Assignment5
 
 		public override string ToString()
 		{
-			return contact.ToString();
+			
+			return string.Format("{0,-20} {1, -20}", id, contact.ToString());
 		}
 
 	}
