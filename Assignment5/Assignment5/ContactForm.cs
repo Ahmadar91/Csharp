@@ -2,7 +2,6 @@
 using System;
 using System.Windows.Forms;
 using Assignment5.ContactFiles;
-using Microsoft.SqlServer.Server;
 
 namespace Assignment5
 {
@@ -10,10 +9,14 @@ namespace Assignment5
 	{
 		private Contact contact = new Contact();
 		private bool closeForm;
-		private bool isCorrectInfo = false;
-		private bool isCanceled = false;
-		public bool IsCorrectInfo { get => isCorrectInfo; set => isCorrectInfo = value; }
-		public bool IsCanceled { get => isCanceled; set => isCanceled = value; }
+		private bool isCorrect;
+
+		public bool IsCorrect
+		{
+			get => isCorrect;
+			set => isCorrect = value;
+		}
+
 		public ContactForm()
 		{
 			InitializeComponent();
@@ -23,7 +26,6 @@ namespace Assignment5
 		public ContactForm(string title)
 		{
 			InitializeComponent();
-
 			InitializeGUI();
 		}
 
@@ -33,7 +35,8 @@ namespace Assignment5
 
 			countryCombo.DataSource = Enum.GetNames(typeof(Countries));
 			countryCombo.SelectedIndex = (int) Countries.Sverige;
-			closeForm = true;
+			closeForm = false;
+
 
 		}
 
@@ -63,22 +66,6 @@ namespace Assignment5
 			countryCombo.SelectedIndex = (int)contact.Address.Country;
 		}
 
-	
-
-	
-
-		private void SetToDefult()
-		{
-			firstNameTxt.Text = "";
-			lastNameTxt.Text = "";
-			homeTxt.Text = "";
-			workTxt.Text = "";
-			emailTxt.Text = "";
-			streetTxt.Text = "";
-			cityTxt.Text = "";
-			zipTxt.Text = "";
-			countryCombo.SelectedIndex = 0;
-		}
 
 		private bool ReadInput()
 		{
@@ -148,61 +135,41 @@ namespace Assignment5
 			this.Close();
 		}
 
-		private void buttonOk_Click(object sender, EventArgs e)
-		{
-		
-			//if ((MessageBox.Show("Are you sure you want to add this customer", "Add Customer Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-			//	MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
-			//{
-			//	isCanceled = false;
-				if (ReadInput() && contact.Address.Validate())
-				{
-					
-				// MessageBox.Show("dadadadadad");
-				// MessageBox.Show(string.Format("{0} {1}\n{2} {3}", contact.Address.ToString(), contact.Email.ToString(), contact.Phone.ToString()));
-				//IsCorrectInfo = true;
-				// SetToDefult();
 
-				}
-				else
-				{
-					MessageBox.Show("Invalided Input! insert Data to Procced or Cancel!");
-					IsCorrectInfo = false;
-				}
+
+
+		private void okButton_Click(object sender, EventArgs e)
+		{
+			
+			if (ReadInput() && contact.Address.Validate())
+			{
+				closeForm = true;
+				isCorrect = true;
+			}
+			else
+			{
+				isCorrect = false;
+				MessageBox.Show("Invalided Input! insert Correct Data to Proceed or Cancel!");
+				
+			}
 		}
 
 		private void ContactForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
-
-			const string message =
-				"Are you sure that you would like to close the form?";
-			const string caption = "Form Closing";
-			var result = MessageBox.Show(message, caption,
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question);
-
-			// If the no button was pressed ...
-			if (result == DialogResult.No)
+			if (this.DialogResult != DialogResult.OK)
 			{
-				// cancel the closure of the form.
-				e.Cancel = true;
+				const string message =
+					"Are you sure that you would like to close the form?";
+				const string caption = "Form Closing";
+				var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				// If the no button was pressed ...
+				if (result == DialogResult.No)
+				{
+					// cancel the closure of the form.
+					e.Cancel = true;
+				}
 			}
+
 		}
-	
 	}
 }
-
-
-// const string message =
-// "Are you sure that you would like to close the form?";
-// const string caption = "Form Closing";
-// var result = MessageBox.Show(message, caption,
-// MessageBoxButtons.YesNo,
-// MessageBoxIcon.Question);
-//
-// // If the no button was pressed ...
-// if (result == DialogResult.No)
-// {
-// // cancel the closure of the form.
-// e.Cancel = true;
-// }

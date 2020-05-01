@@ -49,8 +49,8 @@
 			this.ddd = new System.Windows.Forms.Label();
 			this.adas = new System.Windows.Forms.Label();
 			this.ad = new System.Windows.Forms.Label();
-			this.buttonOk = new System.Windows.Forms.Button();
 			this.cancel = new System.Windows.Forms.Button();
+			this.okButton = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -265,18 +265,6 @@
 			this.ad.TabIndex = 0;
 			this.ad.Text = "Street";
 			// 
-			// buttonOk
-			// 
-			this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.buttonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonOk.Location = new System.Drawing.Point(346, 1356);
-			this.buttonOk.Name = "buttonOk";
-			this.buttonOk.Size = new System.Drawing.Size(405, 104);
-			this.buttonOk.TabIndex = 3;
-			this.buttonOk.Text = "OK";
-			this.buttonOk.UseVisualStyleBackColor = true;
-			this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
-			// 
 			// cancel
 			// 
 			this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -289,18 +277,30 @@
 			this.cancel.UseVisualStyleBackColor = true;
 			this.cancel.Click += new System.EventHandler(this.cancel_Click_1);
 			// 
+			// okButton
+			// 
+			this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.okButton.Location = new System.Drawing.Point(251, 1347);
+			this.okButton.Name = "okButton";
+			this.okButton.Size = new System.Drawing.Size(405, 113);
+			this.okButton.TabIndex = 5;
+			this.okButton.Text = "OK";
+			this.okButton.UseVisualStyleBackColor = true;
+			this.okButton.Click += new System.EventHandler(this.okButton_Click);
+			// 
 			// ContactForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1487, 1536);
+			this.Controls.Add(this.okButton);
 			this.Controls.Add(this.cancel);
-			this.Controls.Add(this.buttonOk);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "ContactForm";
 			this.Text = "Form1";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContactForm_FormClosing);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
@@ -334,8 +334,8 @@
 		private System.Windows.Forms.TextBox cityTxt;
 		private System.Windows.Forms.TextBox zipTxt;
 		private System.Windows.Forms.ComboBox countryCombo;
-		private System.Windows.Forms.Button buttonOk;
 		private System.Windows.Forms.Button cancel;
+		private System.Windows.Forms.Button okButton;
 	}
 }
 

@@ -17,16 +17,24 @@ namespace Assignment5
 		{
 			ContactForm contactForm = new ContactForm("Add new Customer");
 			int index = listBox.SelectedIndex;
-			contactForm.ShowDialog();
-			//if (index != -1)
-			//{
-			//	contactForm.ContactData = customerManager.GetCustomer(index).Contact;
-				if (contactForm.ShowDialog() == DialogResult.OK)
+			if (contactForm.ShowDialog() == DialogResult.OK)
+			{
+				if (contactForm.IsCorrect)
 				{
 					customerManager.AddCustomer(contactForm.ContactData);
 					UpdateCustomerList();
 				}
-			//}
+					
+			}
+			// if (contactForm.IsCorrect)
+			// {
+			// 	// if (contactForm.ShowDialog() == DialogResult.OK)
+			// 	// {
+			// 	customerManager.AddCustomer(contactForm.ContactData);
+			// 	UpdateCustomerList();
+			// 	// }
+			// }
+
 		}
 
 		private void UpdateCustomerList()
@@ -42,23 +50,21 @@ namespace Assignment5
 		private void changeBtn_Click(object sender, EventArgs e)
 		{
 			int index = listBox.SelectedIndex;
-			if (index != -1)   // Validate index
+			if (index != -1)
 			{
 				ContactForm contactForm = new ContactForm("Change new Customer");
 				contactForm.ContactData = customerManager.GetCustomer(index).Contact;
-				contactForm.ShowDialog();
 				if (contactForm.ShowDialog() == DialogResult.OK)
 				{
-					listBox.Items.RemoveAt(index);
-					customerManager.DeleteCustomer(index);
-					customerManager.ChangeCustomer(new Customer(contactForm.ContactData), index);
+					Customer edited = customerManager.GetCustomer(index);
+					customerManager.ChangeCustomer(edited, index);
 					UpdateCustomerList();
 				}
-				contactForm.ShowDialog();
+			
 			}
 			else
 			{
-				MessageBox.Show("Something is wrong. You may select an item to change!");
+				MessageBox.Show("Select an item to change!");
 			}
 		}
 
@@ -72,13 +78,9 @@ namespace Assignment5
 			}
 			else
 			{
-				MessageBox.Show("You must select an item to delete!");
+				MessageBox.Show("Select an item to delete!");
 			}
 		}
 
-		private void listBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
 	}
 }

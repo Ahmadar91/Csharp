@@ -92,7 +92,6 @@
 			this.listBox.Name = "listBox";
 			this.listBox.Size = new System.Drawing.Size(2070, 929);
 			this.listBox.TabIndex = 5;
-			this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
 			// 
 			// addBtn
 			// 

@@ -39,7 +39,7 @@ namespace Assignment5
 		{
 			if (CheckIndex(index) && newCustomer != null)
 			{
-				customers.Insert(index, newCustomer);
+				customers[index] = newCustomer;
 				return true;
 			}
 
