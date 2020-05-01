@@ -194,6 +194,7 @@
 			// 
 			// countryCombo
 			// 
+			this.countryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.countryCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.countryCombo.FormattingEnabled = true;
 			this.countryCombo.Location = new System.Drawing.Point(292, 330);
@@ -212,7 +213,7 @@
 			// cityTxt
 			// 
 			this.cityTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cityTxt.Location = new System.Drawing.Point(292, 164);
+			this.cityTxt.Location = new System.Drawing.Point(298, 155);
 			this.cityTxt.Name = "cityTxt";
 			this.cityTxt.Size = new System.Drawing.Size(976, 53);
 			this.cityTxt.TabIndex = 5;
@@ -280,6 +281,7 @@
 			// okButton
 			// 
 			this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.okButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.okButton.Location = new System.Drawing.Point(251, 1347);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(405, 113);
@@ -292,6 +294,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(1487, 1536);
 			this.Controls.Add(this.okButton);
 			this.Controls.Add(this.cancel);

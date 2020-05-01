@@ -10,18 +10,24 @@ namespace Assignment5
 		private Contact contact = new Contact();
 		private bool isCorrect;
 
+		/// <summary>Gets or sets a value indicating whether this instance is correct.</summary>
+		/// <value>
+		///   <c>true</c> if this instance is correct; otherwise, <c>false</c>.</value>
 		public bool IsCorrect
 		{
 			get => isCorrect;
 			set => isCorrect = value;
 		}
 
+		/// <summary>Initializes a new instance of the <see cref="ContactForm" /> class.</summary>
 		public ContactForm()
 		{
 			InitializeComponent();
 
 			InitializeGUI();
 		}
+		/// <summary>Initializes a new instance of the <see cref="ContactForm" /> class.</summary>
+		/// <param name="title">The title.</param>
 		public ContactForm(string title)
 		{
 			InitializeComponent();
@@ -29,6 +35,7 @@ namespace Assignment5
 		}
 
 
+		/// <summary>Initializes the GUI.</summary>
 		private void InitializeGUI()
 		{
 
@@ -38,6 +45,8 @@ namespace Assignment5
 
 		}
 
+		/// <summary>Gets or sets the contact data.</summary>
+		/// <value>The contact data.</value>
 		public Contact ContactData
 		{
 			get => contact;
@@ -51,6 +60,7 @@ namespace Assignment5
 			}
 		}
 
+		/// <summary>Updates the GUI.</summary>
 		private void UpdateGUI()
 		{
 			firstNameTxt.Text = contact.FName;
@@ -65,12 +75,16 @@ namespace Assignment5
 		}
 
 
+		/// <summary>Reads the input.</summary>
+		/// <returns></returns>
 		private bool ReadInput()
 		{
 			
 			return ReadName() && ReadPhone() && ReadEmails() && ReadAddress();
 		}
 
+		/// <summary>Reads the address.</summary>
+		/// <returns></returns>
 		private bool ReadAddress()
 		{
 
@@ -81,6 +95,8 @@ namespace Assignment5
 			return true;
 		}
 
+		/// <summary>Reads the emails.</summary>
+		/// <returns></returns>
 		public bool ReadEmails()
 		{
 
@@ -95,8 +111,10 @@ namespace Assignment5
 			return false;
 		}
 
-		
 
+
+		/// <summary>Reads the phone.</summary>
+		/// <returns></returns>
 		public bool ReadPhone()
 		{
 			
@@ -110,6 +128,8 @@ namespace Assignment5
 			return false;
 		}
 
+		/// <summary>Reads the name.</summary>
+		/// <returns></returns>
 		private bool ReadName()
 		{
 			if (!string.IsNullOrEmpty(firstNameTxt.Text) && !string.IsNullOrEmpty(lastNameTxt.Text))
@@ -122,12 +142,17 @@ namespace Assignment5
 
 		}
 
+		/// <summary>Converts to string.</summary>
+		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public override string ToString()
 		{
 			return contact.ToString();
 		}
 
-		
+
+		/// <summary>Handles the 1 event of the cancel_Click control.</summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void cancel_Click_1(object sender, EventArgs e)
 		{
 			this.Close();
@@ -136,6 +161,9 @@ namespace Assignment5
 
 
 
+		/// <summary>Handles the Click event of the okButton control.</summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void okButton_Click(object sender, EventArgs e)
 		{
 			
@@ -151,6 +179,9 @@ namespace Assignment5
 			}
 		}
 
+		/// <summary>Handles the FormClosing event of the ContactForm control.</summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="FormClosingEventArgs" /> instance containing the event data.</param>
 		private void ContactForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			if (this.DialogResult != DialogResult.OK)

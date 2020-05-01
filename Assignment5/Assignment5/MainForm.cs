@@ -7,12 +7,16 @@ namespace Assignment5
 	public partial class MainForm : Form
 	{
 		private CustomerManager customerManager;
+		/// <summary>Initializes a new instance of the <see cref="MainForm" /> class.</summary>
 		public MainForm()
 		{
 			customerManager = new CustomerManager();
 			InitializeComponent();
 		}
 
+		/// <summary>Handles the Click event of the addBtn control.</summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void addBtn_Click(object sender, EventArgs e)
 		{
 			ContactForm contactForm = new ContactForm("Add new Customer");
@@ -26,17 +30,10 @@ namespace Assignment5
 				}
 					
 			}
-			// if (contactForm.IsCorrect)
-			// {
-			// 	// if (contactForm.ShowDialog() == DialogResult.OK)
-			// 	// {
-			// 	customerManager.AddCustomer(contactForm.ContactData);
-			// 	UpdateCustomerList();
-			// 	// }
-			// }
 
 		}
 
+		/// <summary>Updates the customer list.</summary>
 		private void UpdateCustomerList()
 		{
 			string[] strContacts = customerManager.GetCustomersInfo();
@@ -47,6 +44,9 @@ namespace Assignment5
 			}
 		}
 
+		/// <summary>Handles the Click event of the changeBtn control.</summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void changeBtn_Click(object sender, EventArgs e)
 		{
 			int index = listBox.SelectedIndex;
@@ -71,6 +71,9 @@ namespace Assignment5
 			}
 		}
 
+		/// <summary>Handles the Click event of the deleteBtn control.</summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
 		private void deleteBtn_Click(object sender, EventArgs e)
 		{
 			int index = listBox.SelectedIndex;
