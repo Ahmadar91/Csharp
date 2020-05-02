@@ -63,7 +63,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(564, 71);
+			this.label3.Location = new System.Drawing.Point(705, 71);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(443, 46);
 			this.label3.TabIndex = 2;
@@ -73,7 +73,7 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(1230, 71);
+			this.label4.Location = new System.Drawing.Point(1443, 71);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(467, 46);
 			this.label4.TabIndex = 3;
@@ -83,7 +83,7 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(1995, 71);
+			this.label5.Location = new System.Drawing.Point(2403, 71);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(120, 46);
 			this.label5.TabIndex = 4;
@@ -94,9 +94,9 @@
 			this.listBox.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listBox.FormattingEnabled = true;
 			this.listBox.ItemHeight = 36;
-			this.listBox.Location = new System.Drawing.Point(75, 173);
+			this.listBox.Location = new System.Drawing.Point(90, 173);
 			this.listBox.Name = "listBox";
-			this.listBox.Size = new System.Drawing.Size(2157, 904);
+			this.listBox.Size = new System.Drawing.Size(2624, 904);
 			this.listBox.TabIndex = 5;
 			// 
 			// addBtn
@@ -137,7 +137,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(2276, 1356);
+			this.ClientSize = new System.Drawing.Size(2726, 1356);
 			this.Controls.Add(this.deleteBtn);
 			this.Controls.Add(this.changeBtn);
 			this.Controls.Add(this.addBtn);

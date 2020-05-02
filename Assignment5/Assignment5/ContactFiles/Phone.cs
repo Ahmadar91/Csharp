@@ -56,13 +56,13 @@ namespace Assignment5.ContactFiles
 		/// <value>The get to string items headings.</value>
 		public string GetToStringItemsHeadings
 		{
-			get { return string.Format("{0,-20} {1, -20}", "Home Phone", "Work Phone"); }
+			get { return string.Format("{0,0} {1, -5}", "Home Phone", "Work Phone"); }
 		}
 		/// <summary>Converts to string.</summary>
 		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public override string ToString()
 		{
-			return string.Format("{0,-20} {1, -3}", home, work);
+			return $"{home,-5} {work,-3}";
 		}
 	}
 }

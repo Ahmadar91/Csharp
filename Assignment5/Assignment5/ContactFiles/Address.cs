@@ -73,7 +73,7 @@ namespace Assignment5.ContactFiles
 
 		/// <summary>Gets the country string.</summary>
 		/// <returns></returns>
-		public string GetCountryString()
+		private string GetCountryString()
 		{
 			string str = Enum.GetName(typeof(Countries), country);
 			if (str.Contains("_"))
@@ -86,7 +86,7 @@ namespace Assignment5.ContactFiles
 		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public override string ToString()
 		{
-			return string.Format("{0,-25}{1,-8}{2,-10}{3}", street, zipCode, city, GetCountryString());
+			return $"{street,-5}{zipCode,-6}{city,-7}{GetCountryString(),-8}";
 
 		}
 

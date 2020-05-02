@@ -84,7 +84,7 @@ namespace Assignment5.ContactFiles
 		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public override string ToString()
 		{
-			return string.Format("{0,-20} {1, -20} {2, -20} {3, -20}", FullName, address.ToString(), phone.ToString(),email.ToString() );
+			return $"{FullName,-18} {address.ToString(),-28} {phone.ToString(),-25} {email.ToString(),-20}";
 		}
 
 	}

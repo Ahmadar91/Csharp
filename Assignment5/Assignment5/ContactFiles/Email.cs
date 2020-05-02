@@ -96,7 +96,7 @@
         /// <remarks></remarks>
         public override string ToString()
         {
-            string strOut = string.Format("{0,-20} {1, -20}", m_work, m_personal);
+            string strOut = $"{m_work,-20} {m_personal,-20}";
             return strOut;
         }
 
