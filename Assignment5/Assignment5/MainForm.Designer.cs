@@ -96,13 +96,13 @@
 			this.listBox.ItemHeight = 36;
 			this.listBox.Location = new System.Drawing.Point(90, 173);
 			this.listBox.Name = "listBox";
-			this.listBox.Size = new System.Drawing.Size(2624, 904);
+			this.listBox.Size = new System.Drawing.Size(2810, 904);
 			this.listBox.TabIndex = 5;
 			// 
 			// addBtn
 			// 
 			this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.addBtn.Location = new System.Drawing.Point(511, 1166);
+			this.addBtn.Location = new System.Drawing.Point(700, 1166);
 			this.addBtn.Name = "addBtn";
 			this.addBtn.Size = new System.Drawing.Size(243, 92);
 			this.addBtn.TabIndex = 6;
@@ -113,7 +113,7 @@
 			// changeBtn
 			// 
 			this.changeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.changeBtn.Location = new System.Drawing.Point(956, 1166);
+			this.changeBtn.Location = new System.Drawing.Point(1325, 1166);
 			this.changeBtn.Name = "changeBtn";
 			this.changeBtn.Size = new System.Drawing.Size(254, 92);
 			this.changeBtn.TabIndex = 7;
@@ -124,7 +124,7 @@
 			// deleteBtn
 			// 
 			this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.deleteBtn.Location = new System.Drawing.Point(1433, 1166);
+			this.deleteBtn.Location = new System.Drawing.Point(1907, 1166);
 			this.deleteBtn.Name = "deleteBtn";
 			this.deleteBtn.Size = new System.Drawing.Size(254, 92);
 			this.deleteBtn.TabIndex = 8;
@@ -137,7 +137,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(2726, 1356);
+			this.ClientSize = new System.Drawing.Size(2954, 1356);
 			this.Controls.Add(this.deleteBtn);
 			this.Controls.Add(this.changeBtn);
 			this.Controls.Add(this.addBtn);

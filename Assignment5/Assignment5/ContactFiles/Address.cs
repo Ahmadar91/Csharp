@@ -86,7 +86,7 @@ namespace Assignment5.ContactFiles
 		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public override string ToString()
 		{
-			return $"{street,-5}{zipCode,-6}{city,-7}{GetCountryString(),-8}";
+			return $"{street,5}{zipCode,6}{city,7}{GetCountryString(),8}";
 
 		}
 

@@ -84,7 +84,7 @@
         /// <remarks></remarks>
         public string GetToStringItemsHeadings
         {
-            get { return string.Format("{0,-20} {1, -20}", "Office Email", "Private Email"); }
+            get { return string.Format("{0,-5} {1, -10}", "Office Email", "Private Email"); }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@
         /// <remarks></remarks>
         public override string ToString()
         {
-            string strOut = $"{m_work,-20} {m_personal,-20}";
+            string strOut = $"{m_work,-5} {m_personal,-10}";
             return strOut;
         }
 
