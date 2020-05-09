@@ -16,5 +16,7 @@ namespace assignment6
 		{
 			InitializeComponent();
 		}
+
+	
 	}
 }
