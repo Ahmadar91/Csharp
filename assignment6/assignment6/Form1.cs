@@ -15,8 +15,13 @@ namespace assignment6
 		public Form1()
 		{
 			InitializeComponent();
+			InitilizeGUI();
 		}
 
-	
+		private void InitilizeGUI()
+		{
+			this.Text = "To-Do Manager";
+			this.label.Text = string.Empty;
+		}
 	}
 }
