@@ -6,9 +6,9 @@ namespace assignment6
 	public partial class MainForm : Form
 	{
 		private TaskManager taskManager;
+
 		public MainForm()
 		{
-
 			InitializeComponent();
 			taskManager = new TaskManager();
 			InitilizeGUI();
@@ -21,7 +21,7 @@ namespace assignment6
 			string[] priority = Enum.GetNames(typeof(PriorityType));
 			comboBox.Items.Clear();
 			foreach (var item in priority) comboBox.Items.Add(item.Replace("_", " "));
-			comboBox.SelectedIndex = (int)PriorityType.Normal;
+			comboBox.SelectedIndex = (int) PriorityType.Normal;
 			dateTimePicker.Value = DateTime.Now;
 			priorityToolTip.SetToolTip(comboBox, "Choose a priority for the task");
 			toolTip1.SetToolTip(dateTimePicker, "Click to open calendar for date, write in time here");
@@ -83,9 +83,10 @@ namespace assignment6
 		{
 			if (ReadInput())
 			{
-				Task task = new Task(dateTimePicker.Value , (PriorityType)comboBox.SelectedIndex, textBox.Text);
+				Task task = new Task(dateTimePicker.Value, (PriorityType) comboBox.SelectedIndex, textBox.Text);
 				return task;
 			}
+
 			return null;
 		}
 
@@ -105,21 +106,23 @@ namespace assignment6
 			return true;
 		}
 
-		
+
 		private bool ReadDate()
 		{
-			if ((dateTimePicker.Value < new DateTime(2000, 01, 01) ||  dateTimePicker.Value >= new DateTime(2222, 01, 01)))
+			if ((dateTimePicker.Value < new DateTime(2000, 01, 01) ||
+			     dateTimePicker.Value >= new DateTime(2222, 01, 01)))
 			{
 				MessageBox.Show("Wrong date, must be between 2000 - 2222");
 				return false;
 			}
+
 			return true;
 		}
 
 		private void UpdateGUI()
 		{
 			textBox.Text = string.Empty;
-			comboBox.SelectedIndex = (int)PriorityType.Normal;
+			comboBox.SelectedIndex = (int) PriorityType.Normal;
 			dateTimePicker.Value = DateTime.Now;
 			string[] strTasks = taskManager.ListStringArray();
 			if (strTasks != null)
@@ -138,7 +141,7 @@ namespace assignment6
 				{
 					Task task = taskManager.GetTask(index);
 					task.Date = dateTimePicker.Value;
-					task.Priority = (PriorityType)comboBox.SelectedIndex;
+					task.Priority = (PriorityType) comboBox.SelectedIndex;
 					task.Description = textBox.Text;
 					taskManager.Change(task, index);
 					UpdateGUI();
@@ -155,9 +158,20 @@ namespace assignment6
 			int index = listBox.SelectedIndex;
 			if (index != -1)
 			{
-				listBox.Items.RemoveAt(index);
-				taskManager.Delete(index);
-				UpdateGUI();
+				if (this.DialogResult != DialogResult.OK)
+				{
+					const string message =
+						"Are you sure that you would like to delete this item?";
+					const string caption = "Form Closing";
+					var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					// If the no button was pressed ...
+					if (result == DialogResult.Yes)
+					{
+						listBox.Items.RemoveAt(index);
+						taskManager.Delete(index);
+						UpdateGUI();
+					}
+				}
 			}
 			else
 			{
@@ -171,11 +185,10 @@ namespace assignment6
 			if (index != -1)
 			{
 				Task task = taskManager.GetTask(index);
-				comboBox.SelectedIndex = (int)task.Priority;
+				comboBox.SelectedIndex = (int) task.Priority;
 				textBox.Text = task.Description;
 				dateTimePicker.Value = task.Date;
 			}
-		
 		}
 	}
 }
