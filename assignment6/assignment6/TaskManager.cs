@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace assignment6
 {
@@ -7,13 +8,18 @@ namespace assignment6
 	{
 		private List<Task> taskList;
 
+		/// <summary>Gets the count.</summary>
+		/// <value>The count.</value>
 		public int Count => taskList.Count;
 
+		/// <summary>Initializes a new instance of the <see cref="TaskManager" /> class.</summary>
 		public TaskManager()
 		{
 			taskList = new List<Task>();
 		}
 
+		/// <summary>Adds the specified task.</summary>
+		/// <param name="task">The task.</param>
 		public void Add(Task task)
 		{
 			if (task != null)
@@ -24,6 +30,10 @@ namespace assignment6
 
 		}
 
+		/// <summary>Adds the specified date.</summary>
+		/// <param name="date">The date.</param>
+		/// <param name="priority">The priority.</param>
+		/// <param name="description">The description.</param>
 		public void Add(DateTime date, PriorityType priority, string description)
 		{
 			Task task = new Task(date, priority, description);
@@ -31,6 +41,9 @@ namespace assignment6
 			taskList.Sort((x, y) => x.Date.CompareTo(y.Date));
 		}
 
+		/// <summary>Changes the specified new task.</summary>
+		/// <param name="newTask">The new task.</param>
+		/// <param name="index">The index.</param>
 		public void Change(Task newTask, int index)
 		{
 			if (CheckIndex(index) && newTask != null)
@@ -38,6 +51,8 @@ namespace assignment6
 				taskList[index] = newTask;
 			}
 		}
+		/// <summary>Deletes the specified index.</summary>
+		/// <param name="index">The index.</param>
 		public void Delete(int index)
 		{
 			if (CheckIndex(index))
@@ -46,22 +61,34 @@ namespace assignment6
 			}
 		}
 
-		public String[] ListStringArray()
+		/// <summary>Lists the string array.</summary>
+		/// <returns></returns>
+		public ListViewItem[] ListStringArray()
 		{
-			string[] taskArray = new string[Count];
-			for (int i = 0; i < Count; i++)
+			var listViewItems = new List<ListViewItem>();
+			foreach (var task in taskList)
 			{
-				taskArray[i] = taskList[i].ToString();
+				ListViewItem item = new ListViewItem(task.Date.ToShortDateString());
+				item.SubItems.Add(task.GetTimeString());
+				item.SubItems.Add(task.GetPriorityString());
+				item.SubItems.Add(task.Description);
+				listViewItems.Add(item);
 			}
 
-			return taskArray;
+			return listViewItems.ToArray();
 		}
 
+		/// <summary>Checks the index.</summary>
+		/// <param name="index">The index.</param>
+		/// <returns></returns>
 		public bool CheckIndex(int index)
 		{
 			return index >= 0 && index < taskList.Count;
 		}
 
+		/// <summary>Gets the task.</summary>
+		/// <param name="index">The index.</param>
+		/// <returns></returns>
 		public Task GetTask(int index)
 		{
 			if (CheckIndex(index))
