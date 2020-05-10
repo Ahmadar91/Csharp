@@ -52,8 +52,10 @@ namespace assignment6
 
 		public override string ToString()
 		{
-			return $"{date.ToShortDateString(),-12}" + $"{GetTimeString(),-7}"
-													 + $"{GetPriorityString(),-16}" + $"{description}";
+			return $"{date.ToShortDateString(),-23}" 
+			       + $"{GetTimeString(),-10}"
+			       + $"{GetPriorityString(),-25}" 
+			       + $"{description}";
 		}
 
 

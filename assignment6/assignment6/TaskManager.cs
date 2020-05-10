@@ -51,7 +51,7 @@ namespace assignment6
 			string[] taskArray = new string[Count];
 			for (int i = 0; i < Count; i++)
 			{
-				taskArray[i] = taskList.ToString();
+				taskArray[i] = taskList[i].ToString();
 			}
 
 			return taskArray;
@@ -62,5 +62,13 @@ namespace assignment6
 			return index >= 0 && index < taskList.Count;
 		}
 
+		public Task GetTask(int index)
+		{
+			if (CheckIndex(index))
+			{
+				return taskList[index];
+			}
+			return null;
+		}
 	}
 }

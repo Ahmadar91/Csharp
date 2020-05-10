@@ -64,14 +64,15 @@
 			// 
 			// menuStrip1
 			// 
+			this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
 			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-			this.menuStrip1.Size = new System.Drawing.Size(862, 26);
+			this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+			this.menuStrip1.Size = new System.Drawing.Size(2047, 56);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -85,7 +86,7 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(103, 52);
 			this.fileToolStripMenuItem.Text = "File";
 			// 
 			// newToolStripMenuItem
@@ -93,36 +94,36 @@
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
 			this.newToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+N";
 			this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-			this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.newToolStripMenuItem.Size = new System.Drawing.Size(530, 66);
 			this.newToolStripMenuItem.Text = "New";
 			this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(527, 6);
 			// 
 			// openDataFileToolStripMenuItem
 			// 
 			this.openDataFileToolStripMenuItem.Name = "openDataFileToolStripMenuItem";
-			this.openDataFileToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+			this.openDataFileToolStripMenuItem.Size = new System.Drawing.Size(530, 66);
 			this.openDataFileToolStripMenuItem.Text = "Open DataFile";
 			// 
 			// saveDataFileToolStripMenuItem
 			// 
 			this.saveDataFileToolStripMenuItem.Name = "saveDataFileToolStripMenuItem";
-			this.saveDataFileToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+			this.saveDataFileToolStripMenuItem.Size = new System.Drawing.Size(530, 66);
 			this.saveDataFileToolStripMenuItem.Text = "Save DataFile";
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(527, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(530, 66);
 			this.exitToolStripMenuItem.Text = "Exit               Alt+F4";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -131,13 +132,13 @@
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-			this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+			this.helpToolStripMenuItem.Size = new System.Drawing.Size(123, 52);
 			this.helpToolStripMenuItem.Text = "Help";
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(315, 66);
 			this.aboutToolStripMenuItem.Text = "About";
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 			// 
@@ -145,31 +146,31 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(13, 70);
-			this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label1.Location = new System.Drawing.Point(31, 162);
+			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(119, 20);
+			this.label1.Size = new System.Drawing.Size(280, 46);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Date and Time";
 			// 
 			// dateTimePicker
 			// 
 			this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker.Location = new System.Drawing.Point(192, 68);
-			this.dateTimePicker.Margin = new System.Windows.Forms.Padding(1);
+			this.dateTimePicker.Location = new System.Drawing.Point(456, 157);
+			this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.dateTimePicker.Name = "dateTimePicker";
 			this.dateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.dateTimePicker.Size = new System.Drawing.Size(297, 26);
+			this.dateTimePicker.Size = new System.Drawing.Size(700, 53);
 			this.dateTimePicker.TabIndex = 2;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(536, 70);
-			this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label2.Location = new System.Drawing.Point(1273, 162);
+			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(62, 20);
+			this.label2.Size = new System.Drawing.Size(145, 46);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Priority";
 			// 
@@ -178,64 +179,67 @@
 			this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox.FormattingEnabled = true;
-			this.comboBox.Location = new System.Drawing.Point(651, 71);
-			this.comboBox.Margin = new System.Windows.Forms.Padding(1);
+			this.comboBox.Location = new System.Drawing.Point(1546, 164);
+			this.comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.comboBox.Name = "comboBox";
-			this.comboBox.Size = new System.Drawing.Size(178, 28);
+			this.comboBox.Size = new System.Drawing.Size(417, 54);
 			this.comboBox.TabIndex = 4;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(13, 134);
-			this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label3.Location = new System.Drawing.Point(31, 310);
+			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(55, 20);
+			this.label3.Size = new System.Drawing.Size(130, 46);
 			this.label3.TabIndex = 5;
 			this.label3.Text = "To Do";
 			// 
 			// textBox
 			// 
 			this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox.Location = new System.Drawing.Point(163, 134);
-			this.textBox.Margin = new System.Windows.Forms.Padding(1);
+			this.textBox.Location = new System.Drawing.Point(387, 310);
+			this.textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.textBox.Name = "textBox";
-			this.textBox.Size = new System.Drawing.Size(666, 26);
+			this.textBox.Size = new System.Drawing.Size(1576, 53);
 			this.textBox.TabIndex = 6;
 			// 
 			// addBtn
 			// 
 			this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.addBtn.Location = new System.Drawing.Point(238, 196);
-			this.addBtn.Margin = new System.Windows.Forms.Padding(1);
+			this.addBtn.Location = new System.Drawing.Point(565, 453);
+			this.addBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.addBtn.Name = "addBtn";
-			this.addBtn.Size = new System.Drawing.Size(126, 45);
+			this.addBtn.Size = new System.Drawing.Size(299, 104);
 			this.addBtn.TabIndex = 7;
 			this.addBtn.Text = "Add";
 			this.addBtn.UseVisualStyleBackColor = true;
+			this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
 			// 
 			// changeBtn
 			// 
 			this.changeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.changeBtn.Location = new System.Drawing.Point(432, 196);
-			this.changeBtn.Margin = new System.Windows.Forms.Padding(1);
+			this.changeBtn.Location = new System.Drawing.Point(1026, 453);
+			this.changeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.changeBtn.Name = "changeBtn";
-			this.changeBtn.Size = new System.Drawing.Size(126, 45);
+			this.changeBtn.Size = new System.Drawing.Size(299, 104);
 			this.changeBtn.TabIndex = 8;
 			this.changeBtn.Text = "Change";
 			this.changeBtn.UseVisualStyleBackColor = true;
+			this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
 			// 
 			// delBtn
 			// 
 			this.delBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.delBtn.Location = new System.Drawing.Point(626, 196);
-			this.delBtn.Margin = new System.Windows.Forms.Padding(1);
+			this.delBtn.Location = new System.Drawing.Point(1487, 453);
+			this.delBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.delBtn.Name = "delBtn";
-			this.delBtn.Size = new System.Drawing.Size(126, 45);
+			this.delBtn.Size = new System.Drawing.Size(299, 104);
 			this.delBtn.TabIndex = 9;
 			this.delBtn.Text = "Delete";
 			this.delBtn.UseVisualStyleBackColor = true;
+			this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
 			// 
 			// groupBox1
 			// 
@@ -245,11 +249,11 @@
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.listBox);
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(28, 255);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
+			this.groupBox1.Location = new System.Drawing.Point(66, 590);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
-			this.groupBox1.Size = new System.Drawing.Size(818, 314);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.groupBox1.Size = new System.Drawing.Size(1943, 726);
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Tasks";
@@ -257,40 +261,40 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(648, 32);
-			this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label7.Location = new System.Drawing.Point(1539, 74);
+			this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(90, 20);
+			this.label7.Size = new System.Drawing.Size(208, 46);
 			this.label7.TabIndex = 4;
 			this.label7.Text = "Discription";
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(379, 32);
-			this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label6.Location = new System.Drawing.Point(900, 74);
+			this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(62, 20);
+			this.label6.Size = new System.Drawing.Size(145, 46);
 			this.label6.TabIndex = 3;
 			this.label6.Text = "Priority";
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(273, 32);
-			this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label5.Location = new System.Drawing.Point(648, 74);
+			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(46, 20);
+			this.label5.Size = new System.Drawing.Size(107, 46);
 			this.label5.TabIndex = 2;
 			this.label5.Text = "Hour";
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(24, 32);
-			this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label4.Location = new System.Drawing.Point(57, 74);
+			this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(45, 20);
+			this.label4.Size = new System.Drawing.Size(104, 46);
 			this.label4.TabIndex = 1;
 			this.label4.Text = "Date";
 			// 
@@ -298,22 +302,23 @@
 			// 
 			this.listBox.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listBox.FormattingEnabled = true;
-			this.listBox.ItemHeight = 20;
-			this.listBox.Location = new System.Drawing.Point(13, 60);
-			this.listBox.Margin = new System.Windows.Forms.Padding(1);
+			this.listBox.ItemHeight = 42;
+			this.listBox.Location = new System.Drawing.Point(31, 139);
+			this.listBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.listBox.Name = "listBox";
-			this.listBox.Size = new System.Drawing.Size(788, 224);
+			this.listBox.Size = new System.Drawing.Size(1866, 508);
 			this.listBox.TabIndex = 0;
+			this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
 			// 
 			// label
 			// 
 			this.label.AutoSize = true;
 			this.label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label.Location = new System.Drawing.Point(728, 586);
-			this.label.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label.Location = new System.Drawing.Point(1729, 1355);
+			this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label.Name = "label";
-			this.label.Size = new System.Drawing.Size(55, 22);
+			this.label.Size = new System.Drawing.Size(128, 48);
 			this.label.TabIndex = 11;
 			this.label.Text = "label4";
 			// 
@@ -324,9 +329,10 @@
 			// 
 			// MainForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(862, 612);
+			this.AutoSize = true;
+			this.ClientSize = new System.Drawing.Size(2047, 1415);
 			this.Controls.Add(this.label);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.delBtn);
@@ -340,9 +346,9 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
-			this.Margin = new System.Windows.Forms.Padding(1);
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Name = "MainForm";
-			this.Text = "Form1";
+			this.Text = "To Do Manager";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
